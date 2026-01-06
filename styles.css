@@ -6,8 +6,6 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-/* ...existing code... */
-
 /* Fix horizontal overflow on mobile */
 @media (max-width: 768px) {
     /* Prevent body overflow */
@@ -662,9 +660,6 @@ body.custom-cursor .footer-link  {
 }
 
 
-
-/* ...existing code... */
-
 /* Mac Style Preview Card */
 .preview-card {
     background: rgba(42, 45, 58, 0.9);
@@ -817,7 +812,6 @@ body.custom-cursor .footer-link  {
     }
 }
 
-/* ...existing code... */
 
 /* Processing Area */
 .processing-area,
@@ -991,7 +985,6 @@ body.custom-cursor .footer-link  {
 .data-content.has-data {
     padding: 24px;
 }
-/* ...existing code... */
 
 /* Data Preview Section */
 .data-preview {
@@ -3355,9 +3348,7 @@ footer {
 }
 
 
-/* ...existing code... */
-
-/* Animate up from bottom for diagram section - UPDATED */
+/* Animate up from bottom for diagram section */
 .animate-pop-up-diagram {
     opacity: 0;
     /* Don't use transform here - it conflicts with card positioning */
@@ -3431,7 +3422,6 @@ footer {
     transform: translateY(0) scale(1);
 }
 
-/* ...existing code... */
 
 /* For central circle - preserve centering transform */
 .central-circle.animate-pop-up-diagram {
@@ -3562,7 +3552,6 @@ footer {
     }
 }
 
-/* ...existing code... */
 
 /* Mobile Use Case Cards */
 .mobile-use-cases {
@@ -3641,7 +3630,6 @@ footer {
     }
 }
 
-/* ...existing code... */
 
 @media (max-width: 768px) {
     .map-section {
@@ -3731,7 +3719,6 @@ footer {
     }
 }
 
-/* ...existing code... */
 
 /* Always active hover effects on mobile/tablet */
 @media (max-width: 992px) {
@@ -3835,7 +3822,6 @@ footer {
     }
 }
 
-/* ...existing code... */
 
 /* Disable all animations on mobile */
 @media (max-width: 768px) {
