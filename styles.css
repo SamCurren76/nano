@@ -6,6 +6,69 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+/* ...existing code... */
+
+/* Fix horizontal overflow on mobile */
+@media (max-width: 768px) {
+    /* Prevent body overflow */
+    body {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    
+    section {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .row {
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+    
+    .row > * {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    
+    .preview-card {
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+
+    .hero-section .container {
+        max-width: 100%;
+    }
+    
+
+    .parallax-container {
+        display: none !important;
+    }
+    
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+
+    .map-container {
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    .diagram-container {
+        display: none !important;
+    }
+}
+
 .font-8  { font-size: 0.5rem !important; } 
 .font-9  { font-size: 0.5625rem !important; }
 .font-10 { font-size: 0.625rem !important; }
@@ -152,6 +215,142 @@ body {
     color: #2B7FFF !important;
 }
 
+@media (max-width: 991px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        right: 16px;
+        left: auto;
+        width: 320px;
+        max-width: calc(100vw - 32px);
+        background: rgba(8, 17, 47, 0.98);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(43, 127, 255, 0.2);
+        border-radius: 16px;
+        margin-top: 8px;
+        padding: 20px 0;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+                    0 0 60px rgba(43, 127, 255, 0.1);
+        z-index: 1000;
+    }
+    
+    .navbar-collapse.collapsing {
+        transition: height 0.3s ease;
+    }
+    
+    .navbar-collapse.show {
+        animation: slideDown 0.3s ease-out;
+    }
+    
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .navbar-nav {
+        padding: 0 20px;
+    }
+    
+    .nav-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        margin: 0;
+    }
+    
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-link {
+        padding: 16px 12px !important;
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.9) !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover {
+        color: #51A2FF !important;
+        background: rgba(43, 127, 255, 0.1);
+        border-radius: 8px;
+        padding-left: 20px !important;
+    }
+    
+    .nav-link::after {
+        content: '›';
+        font-size: 1.5rem;
+        color: rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+        color: #51A2FF;
+        transform: translateX(4px);
+    }
+    
+    /* Mobile login button */
+    .navbar-collapse .d-flex {
+        padding: 20px 20px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        margin-top: 12px;
+    }
+    
+    .navbar-collapse .btn-login {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 1rem;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .navbar-collapse .btn-login:active {
+        transform: scale(0.98);
+    }
+    
+    /* Adjust navbar container for mobile */
+    .navbar > .container {
+        position: relative;
+    }
+    
+    /* Close animation */
+    .navbar-collapse.collapsing[style*="height: 0px"] {
+        animation: slideUp 0.3s ease-out;
+    }
+    
+    @keyframes slideUp {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+    }
+}
+
+/* Desktop - ensure normal behavior */
+@media (min-width: 992px) {
+    .navbar-collapse {
+        position: static;
+        background: none;
+        border: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
 .btn-login {
     background: linear-gradient(90deg, #2B7FFF 0%, #AD46FF 100%);
     border: none;
@@ -166,7 +365,7 @@ body {
 .gradient-toggle {
     background: linear-gradient(90deg, #2B7FFF 0%, #AD46FF 100%);
     border-radius: 50%;
-    padding: 8px 12px;
+    padding: 12px 12px;
 }
 
 .gradient-toggle:focus {
@@ -3633,5 +3832,49 @@ footer {
     .contact-icon {
         transform: scale(1.1);
         box-shadow: 0 0 20px rgba(81, 162, 255, 0.4);
+    }
+}
+
+/* ...existing code... */
+
+/* Disable all animations on mobile */
+@media (max-width: 768px) {
+    /* Remove all animation classes on mobile */
+    .animate-pop-left,
+    .animate-pop-right,
+    .animate-pop-up,
+    .animate-pop-up-diagram,
+    .animate-pop-up-map,
+    .animate-pop-up-pricing,
+    .animate-pop-up-security,
+    .animate-pop-up-cta,
+    .animate-pop-up-contact,
+    .animate-pop-left-contact,
+    .animate-pop-right-contact,
+    .animate-pop-up-mobile-use-case {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    /* Ensure diagram cards maintain their positions */
+    .diagram-card.card-top {
+        transform: translateX(-50%) !important;
+    }
+    
+    .diagram-card.card-bottom {
+        transform: translateX(-50%) !important;
+    }
+    
+    .diagram-card.card-left {
+        transform: translateY(-50%) !important;
+    }
+    
+    .diagram-card.card-right {
+        transform: translateY(-50%) !important;
+    }
+    
+    .central-circle {
+        transform: translate(-50%, -50%) !important;
     }
 }

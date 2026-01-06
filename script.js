@@ -74,110 +74,68 @@
         elements.forEach(el => observer.observe(el));
     }
 
-
-    
     function animateDiagramSection() {
         const diagramSection = document.querySelector('.diagram-section');
         if (!diagramSection) return;
-    
-        // Check if mobile view
-        const isMobile = window.innerWidth < 768;
-    
-        if (isMobile) {
-            // Mobile animation
-            const heading = diagramSection.querySelector('.features-heading.animate-pop-up-diagram');
-            const subtitle = diagramSection.querySelector('.text-faded.animate-pop-up-diagram');
-            const mobileCards = diagramSection.querySelectorAll('.mobile-use-case-card.animate-pop-up-mobile-use-case');
-    
-            let animated = false;
-    
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !animated) {
-                        animated = true;
-                        
-                        // Animate heading
-                        if (heading) {
-                            setTimeout(() => heading.classList.add('in-view'), 0);
-                        }
-                        
-                        // Animate subtitle
-                        if (subtitle) {
-                            setTimeout(() => subtitle.classList.add('in-view'), 180);
-                        }
-                        
-                        // Animate mobile cards with stagger
-                        mobileCards.forEach((card, i) => {
-                            setTimeout(() => card.classList.add('in-view'), 360 + i * 120);
-                        });
+
+        // Select elements in the order they should animate:
+        const heading = diagramSection.querySelector('.features-heading.animate-pop-up-diagram');
+        const subtitle = diagramSection.querySelector('.text-faded.animate-pop-up-diagram');
+        const centralCircle = diagramSection.querySelector('.central-circle.animate-pop-up-diagram');
+        const rightCard = diagramSection.querySelector('.diagram-card.card-right.animate-pop-up-diagram');
+        const topCard = diagramSection.querySelector('.diagram-card.card-top.animate-pop-up-diagram');
+        const leftCard = diagramSection.querySelector('.diagram-card.card-left.animate-pop-up-diagram');
+        const bottomCard = diagramSection.querySelector('.diagram-card.card-bottom.animate-pop-up-diagram');
+
+        let animated = false;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animated) {
+                    animated = true;
+                    
+                    // Animate heading
+                    if (heading) {
+                        setTimeout(() => heading.classList.add('in-view'), 0);
                     }
-                });
-            }, { 
-                threshold: 0.2,
-                rootMargin: '-50px 0px'
-            });
-    
-            observer.observe(diagramSection);
-        } else {
-            // Desktop animation (existing code)
-            const heading = diagramSection.querySelector('.features-heading.animate-pop-up-diagram');
-            const subtitle = diagramSection.querySelector('.text-faded.animate-pop-up-diagram');
-            const centralCircle = diagramSection.querySelector('.central-circle.animate-pop-up-diagram');
-            const rightCard = diagramSection.querySelector('.diagram-card.card-right.animate-pop-up-diagram');
-            const topCard = diagramSection.querySelector('.diagram-card.card-top.animate-pop-up-diagram');
-            const leftCard = diagramSection.querySelector('.diagram-card.card-left.animate-pop-up-diagram');
-            const bottomCard = diagramSection.querySelector('.diagram-card.card-bottom.animate-pop-up-diagram');
-    
-            let animated = false;
-    
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !animated) {
-                        animated = true;
-                        
-                        // Animate heading
-                        if (heading) {
-                            setTimeout(() => heading.classList.add('in-view'), 0);
-                        }
-                        
-                        // Animate subtitle
-                        if (subtitle) {
-                            setTimeout(() => subtitle.classList.add('in-view'), 180);
-                        }
-                        
-                        // Animate center circle and right card together
-                        if (centralCircle) {
-                            setTimeout(() => centralCircle.classList.add('in-view'), 360);
-                        }
-                        if (rightCard) {
-                            setTimeout(() => rightCard.classList.add('in-view'), 360);
-                        }
-                        
-                        // Animate top card
-                        if (topCard) {
-                            setTimeout(() => topCard.classList.add('in-view'), 540);
-                        }
-                        
-                        // Animate left card
-                        if (leftCard) {
-                            setTimeout(() => leftCard.classList.add('in-view'), 720);
-                        }
-                        
-                        // Animate bottom card
-                        if (bottomCard) {
-                            setTimeout(() => bottomCard.classList.add('in-view'), 900);
-                        }
+                    
+                    // Animate subtitle
+                    if (subtitle) {
+                        setTimeout(() => subtitle.classList.add('in-view'), 180);
                     }
-                });
-            }, { 
-                threshold: 0.3,
-                rootMargin: '-50px 0px'
+                    
+                    // Animate center circle and right card together
+                    if (centralCircle) {
+                        setTimeout(() => centralCircle.classList.add('in-view'), 360);
+                    }
+                    if (rightCard) {
+                        setTimeout(() => rightCard.classList.add('in-view'), 360);
+                    }
+                    
+                    // Animate top card
+                    if (topCard) {
+                        setTimeout(() => topCard.classList.add('in-view'), 540);
+                    }
+                    
+                    // Animate left card
+                    if (leftCard) {
+                        setTimeout(() => leftCard.classList.add('in-view'), 720);
+                    }
+                    
+                    // Animate bottom card
+                    if (bottomCard) {
+                        setTimeout(() => bottomCard.classList.add('in-view'), 900);
+                    }
+                }
             });
-    
-            observer.observe(diagramSection);
-        }
+        }, { 
+            threshold: 0.3,  // Trigger when 30% of the section is visible
+            rootMargin: '-50px 0px'  // Add some margin to delay trigger
+        });
+
+        observer.observe(diagramSection);
     }
-    
+
     window.addEventListener('DOMContentLoaded', animateDiagramSection);
 
     // Animate elements with .animate-pop-left and .animate-pop-right on page load
