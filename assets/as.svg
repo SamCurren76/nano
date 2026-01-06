@@ -1,0 +1,25 @@
+<svg viewBox="-220 -220 440 440"
+     width="800" height="800"
+     xmlns="http://www.w3.org/2000/svg"
+     fill="none">
+
+  <g
+    stroke="#f7f8f9"
+    stroke-width="0.7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    vector-effect="non-scaling-stroke">
+
+    <!-- Orbit 1 (horizontal) -->
+    <ellipse cx="0" cy="0" rx="180" ry="55" />
+
+    <!-- Orbit 2 (taller fangs) -->
+    <ellipse cx="0" cy="0" rx="180" ry="55"
+             transform="rotate(65)" />
+
+    <!-- Orbit 3 (taller fangs) -->
+    <ellipse cx="0" cy="0" rx="180" ry="55"
+             transform="rotate(-65)" />
+
+  </g>
+</svg>

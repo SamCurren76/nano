@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NanoApp</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/logo.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Federo&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- amCharts Scripts -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+</head>
+
+<body>
+    <!-- Background Parallax Container -->
+    <div class="parallax-container d-none d-lg-block">
+        <div class="parallax-bg">
+            <img src="assets/as.svg" alt="Background Element" class="parallax-image">
+
+            <div class="star-orbit">
+                <div class="star star-1"></div>
+                <div class="star star-2"></div>
+                <div class="star star-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #04061b;">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/logo-main.svg" alt="Logo" height="60">
+                </a>
+
+                <button class="navbar-toggler border-0 gradient-toggle" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link mont nav-custom px-3" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mont nav-custom px-3" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mont nav-custom px-3" href="#">Live Cases</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mont nav-custom px-3" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mont nav-custom px-3" href="#">Contact</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex">
+                        <button class="btn btn-login text-white px-4 py-2">
+                            Login <i class="bi bi-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="heroSection">
+            <div class="container py-0">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-md-6 animate-pop-left">
+                        <div class="badge-custom mb-4 d-inline-flex align-items-center gap-2">
+                            <span><img src="assets/ai-icon.svg" width="18" alt=""></span>
+                            <span class="mont">AI-Powered OCR Platform</span>
+                        </div>
+
+                        <h1 class="hero-heading fed mb-4">
+                            Transform Documents into Living Data
+                        </h1>
+                        <p class="text-white mb-4 mont para-text">
+                            Experience next-gen OCR with instant precision. Advanced AI that reads,<br
+                                class="d-md-block d-none"> understands, and
+                            transforms any document into actionable intelligence.
+                        </p>
+
+                        <!-- Stats -->
+                        <div class="row g-0 mb-4">
+                            <div class="col-md-2 col-3">
+                                <div class="stat-item">
+                                    <div class="stat-line"></div>
+                                    <div class="stat-content">
+                                        <h3 class="stat-number fed font-18 text-white mb-1">99.9%</h3>
+                                        <p class="stat-label mont font-12 text-white-50 mb-0">Accuracy</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <div class="stat-item">
+                                    <div class="stat-line"></div>
+                                    <div class="stat-content">
+                                        <h3 class="stat-number fed font-18 text-white mb-1">&lt;100ms</h3>
+                                        <p class="stat-label mont font-12 text-white-50 mb-0">Processing</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-3">
+                                <div class="stat-item">
+                                    <div class="stat-line"></div>
+                                    <div class="stat-content">
+                                        <h3 class="stat-number fed font-18 text-white mb-1">95+</h3>
+                                        <p class="stat-label mont font-12 text-white-50 mb-0">Languages</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="d-flex flex-wrap gap-3">
+                            <button class="btn btn-primary-gradient font-14 mont px-4 py-3">
+                                Try Demo Now <i class="bi bi-arrow-right ms-2"></i>
+                            </button>
+                            <button class="btn btn-outline-custom font-14 mont px-4 py-3">
+                                View Documentation
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 animate-pop-right">
+                        <!-- Mac Style Preview Card -->
+                        <div class="preview-card">
+                            <!-- Top Bar -->
+                            <div class="preview-header">
+                                <div class="window-controls">
+                                    <span class="control-dot dot-red"></span>
+                                    <span class="control-dot dot-yellow"></span>
+                                    <span class="control-dot dot-green"></span>
+                                </div>
+                                <div class="preview-title mont text-white-50">Preview</div>
+                                <div class="live-demo-badge">
+                                    <span class="mont">Live Demo</span>
+                                </div>
+                            </div>
+
+                            <hr class="preview-divider">
+
+                            <div class="upload-area" id="uploadArea">
+                                <div class="upload-zone" id="uploadZone">
+                                    <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png"
+                                        style="display: none;">
+                                    <img src="assets/upload.svg" alt="Upload Icon" class="upload-icon">
+                                    <p class="upload-text-main fed">Drop Document Here</p>
+                                    <p class="upload-text-sub mont text-white-50">or click to upload</p>
+                                </div>
+                            </div>
+
+                            <!-- Processing Area (Hidden Initially) -->
+                            <div class="processing-area" id="processingArea" style="display: none;">
+                                <div class="document-preview">
+                                    <div class="doc-preview-header">
+                                        <div class="doc-icon-container">
+                                            <img src="assets/scan.svg" alt="">
+                                        </div>
+                                        <!-- <i class="bi bi-x-circle doc-close-icon" id="closeDoc"></i> -->
+                                        <span class="doc-type-label mont">DRIVER LICENSE</span>
+                                    </div>
+                                    <div class="progress-bars" id="progressBars">
+                                        <div class="progress-bar-item">
+                                            <div class="progress-bar-fill"></div>
+                                        </div>
+                                        <div class="progress-bar-item">
+                                            <div class="progress-bar-fill"></div>
+                                        </div>
+                                        <div class="progress-bar-item">
+                                            <div class="progress-bar-fill"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-extract w-100" id="extractBtn"
+                                    style="opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">
+                                    Extract Text
+                                </button>
+                            </div>
+
+                            <!-- Extracted View (Hidden Initially) -->
+                            <div class="extracted-area" id="extractedArea" style="display: none;">
+                                <div class="document-preview">
+                                    <div class="doc-preview-header">
+                                        <div class="doc-icon-container">
+                                            <img src="assets/scan.svg" alt="">
+                                        </div>
+                                        <span class="doc-type-label mont">DRIVER LICENSE</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-replace w-100" id="replaceBtn">
+                                    <i class="bi bi-arrow-clockwise me-2"></i> Replace File
+                                </button>
+                            </div>
+
+                            <!-- Extracted Data Section -->
+                            <div class="data-preview">
+                                <div class="data-header d-flex align-items-center">
+                                    <span class="fed"> <span class="me-2"><img class="mb-1" src="assets/doc.svg"
+                                                alt=""></span>Extracted Data</span>
+                                </div>
+                                <div class="data-content" id="dataContent">
+                                    <p class="no-data-text weight-300 font-13 text-white-50 mont">No Data yet</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span class="scroll-text mont">SCROLL</span>
+                <div class="mouse">
+                    <div class="mouse-wheel"></div>
+                </div>
+            </div>
+
+        </section>
+        <section class="features-section py-5">
+            <div class="grid-bg"></div>
+            <div class="container">
+                <!-- Section Title -->
+                <div class="text-center mb-5">
+                    <h2 class="features-heading fed mb-3 animate-pop-up">
+                        THE ULTIMATE OCR FOR GLOBAL DOCUMENTS
+                    </h2>
+                    <div class="divider-container">
+                        <span class="divider-line"></span>
+                        <span class="divider-line-short"></span>
+                        <span class="divider-line"></span>
+                    </div>
+                </div>
+
+                <!-- Feature Cards -->
+                <div class="row g-4">
+                    <div class="col-lg col-md-6 col-sm-6">
+                        <div class="feature-card animate-pop-up" data-color="blue">
+                            <div class="feature-content">
+                                <h3 class="feature-title mont">Latest AI Technology</h3>
+                                <p class="feature-description mont">Powered by cutting-edge machine learning models for
+                                    superior accuracy</p>
+                            </div>
+                            <div class="feature-indicator">
+                                <span class="indicator-dot"></span>
+                                <span class="indicator-line"></span>
+                                <span class="indicator-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg col-md-6 col-sm-6">
+                        <div class="feature-card animate-pop-up" data-color="purple">
+                            <div class="feature-content">
+                                <h3 class="feature-title mont">Multi-lingual Extraction</h3>
+                                <p class="feature-description mont">Support for 95+ languages with native script
+                                    recognition</p>
+                            </div>
+                            <div class="feature-indicator">
+                                <span class="indicator-dot"></span>
+                                <span class="indicator-line"></span>
+                                <span class="indicator-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg col-md-6 col-sm-6">
+                        <div class="feature-card animate-pop-up" data-color="pink">
+                            <div class="feature-content">
+                                <h3 class="feature-title mont">Easy Integration</h3>
+                                <p class="feature-description mont">Simple API with comprehensive documentation and SDKs
+                                </p>
+                            </div>
+                            <div class="feature-indicator">
+                                <span class="indicator-dot"></span>
+                                <span class="indicator-line"></span>
+                                <span class="indicator-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg col-md-6 col-sm-6">
+                        <div class="feature-card animate-pop-up" data-color="cyan">
+                            <div class="feature-content">
+                                <h3 class="feature-title mont">Pre-trained Templates</h3>
+                                <p class="feature-description mont">Ready-to-use templates for common document types</p>
+                            </div>
+                            <div class="feature-indicator">
+                                <span class="indicator-dot"></span>
+                                <span class="indicator-line"></span>
+                                <span class="indicator-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg col-md-6 col-sm-6">
+                        <div class="feature-card animate-pop-up" data-color="orange">
+                            <div class="feature-content">
+                                <h3 class="feature-title mont">Highly Accurate & Fast</h3>
+                                <p class="feature-description mont">99.9% accuracy with processing under 100ms</p>
+                            </div>
+                            <div class="feature-indicator">
+                                <span class="indicator-dot"></span>
+                                <span class="indicator-line"></span>
+                                <span class="indicator-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diagram-section py-5">
+            <div class="container">
+                <div class="text-center mb-5 ">
+                    <h2 class="features-heading fed mb-3 animate-pop-up-diagram">
+                        INDUSTRY USE-CASES
+                    </h2>
+                    <p class="text-faded mont weight-300 animate-pop-up-diagram">THE ULTIMATE OCR FOR GLOBAL DOCUMENTS</p>
+                </div>
+                <div class="diagram-container d-none d-md-block">
+                    <!-- Central Circle with Image -->
+                    <div class="central-circle animate-pop-up-diagram">
+                        <div class="inner-circle">
+                            <img src="assets/logo-main.svg" alt="Central Icon">
+                        </div>
+                        <div class="outer-circle">
+                            <div class="orbit-dot orbit-dot-blue"></div>
+                            <div class="orbit-dot orbit-dot-purple"></div>
+                        </div>
+                    </div>
+
+                    <!-- Connecting Lines -->
+                    <svg class="connection-lines" viewBox="0 0 800 800">
+                        <!-- Top to Left diagonal line -->
+                        <line x1="360" y1="150" x2="240" y2="310" stroke="#9e9e9e" stroke-width="1" />
+                        <!-- Left to Bottom diagonal line -->
+                        <line x1="240" y1="490" x2="360" y2="650" stroke="#9e9e9e" stroke-width="1" />
+                        <!-- Bottom to Right diagonal line -->
+                        <line x1="440" y1="650" x2="560" y2="490" stroke="#9e9e9e" stroke-width="1" />
+                        <!-- Right to Top diagonal line -->
+                        <line x1="560" y1="310" x2="440" y2="150" stroke="#9e9e9e" stroke-width="1" />
+                    </svg>
+
+                    <!-- Feature Cards -->
+                    <div class="diagram-card card-top py-5 animate-pop-up-diagram">
+                        <div class="card-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h4 class="card-title fed">E-Commerce & Delivery</h4>
+                    </div>
+
+                    <div class="diagram-card card-right py-5 animate-pop-up-diagram">
+                        <div class="card-icon">
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                        <h4 class="card-title fed">Banking & Fintech</h4>
+                    </div>
+
+                    <div class="diagram-card card-bottom py-5 animate-pop-up-diagram">
+                        <div class="card-icon">
+                            <i class="bi bi-cloud-upload"></i>
+                        </div>
+                        <h4 class="card-title fed">Travel & Immigration</h4>
+                    </div>
+
+                    <div class="diagram-card card-left py-5 animate-pop-up-diagram">
+                        <div class="card-icon">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h4 class="card-title fed">Healthcare</h4>
+                    </div>
+                </div>
+
+                <div class="mobile-use-cases d-block d-md-none">
+            <div class="row g-3">
+                <div class="col-6">
+                    <div class="mobile-use-case-card animate-pop-up-mobile-use-case">
+                        <div class="mobile-card-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h5 class="mobile-card-title mont">E-Commerce & Delivery</h5>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mobile-use-case-card animate-pop-up-mobile-use-case">
+                        <div class="mobile-card-icon">
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                        <h5 class="mobile-card-title mont">Banking & Fintech</h5>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mobile-use-case-card animate-pop-up-mobile-use-case">
+                        <div class="mobile-card-icon">
+                            <i class="bi bi-cloud-upload"></i>
+                        </div>
+                        <h5 class="mobile-card-title mont">Travel & Immigration</h5>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="mobile-use-case-card animate-pop-up-mobile-use-case">
+                        <div class="mobile-card-icon">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h5 class="mobile-card-title mont">Healthcare</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+        </section>
+
+        <section class="map-section py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="features-heading fed mb-3 animate-pop-up-map">
+                        Global Document Coverage
+                    </h2>
+                    <p class="text-faded mont weight-300 animate-pop-up-map">THE ULTIMATE OCR FOR GLOBAL DOCUMENTS</p>
+                </div>
+                <div class="map-container animate-pop-up-map">
+                    <!-- Stats Boxes -->
+                    <div class="map-stats">
+                        <div class="map-stat-box animate-pop-up-map">
+                            <i class="bi bi-translate stat-box-icon"></i>
+                            <div class="stat-box-content">
+                                <h3 class="stat-box-number fed">95+</h3>
+                                <p class="stat-box-label mont">Languages</p>
+                            </div>
+                        </div>
+                        <div class="map-stat-box-2 animate-pop-up-map">
+                            <i class="bi bi-globe2 stat-box-icon"></i>
+                            <div class="stat-box-content">
+                                <h3 class="stat-box-number fed">150+</h3>
+                                <p class="stat-box-label mont">Countries ID Docs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Wrapper -->
+                    <div class="map-wrapper animate-pop-up-map">
+                        <div id="chartdiv"></div>
+                    </div>
+                    <div class="map-legend animate-pop-up-map">
+                        <div class="legend-item">
+                            <span class="legend-dot"></span>
+                            <span class="legend-text mont">Supported Countries</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot"></span>
+                            <span class="legend-text mont">Hover to View</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6 mx-auto text-center animate-pop-up-map">
+                        <p class="mont text-white-50 font-14 weight-300">Our AI is continuously trained on documents from around the world, ensuring accurate recognition of passports, driver's licenses, national IDs, and official documents from over 150 countries.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-section py-5">
+            <div class="container">
+                <!-- Section Title -->
+                <div class="text-center mb-5">
+                    <h2 class="features-heading fed mb-4 animate-pop-up-pricing">
+                        FLEXIBLE PRICING
+                    </h2>
+
+                    <!-- Billing Toggle -->
+                    <div class="billing-toggle-container animate-pop-up-pricing">
+                        <span class="billing-label monthly-label active">Monthly</span>
+                        <label class="billing-switch">
+                            <input type="checkbox" id="billingToggle">
+                            <span class="switch-slider"></span>
+                        </label>
+                        <span class="billing-label annual-label">Annual</span>
+                        <span class="save-badge">Save 20%</span>
+                    </div>
+                </div>
+
+                <!-- Pricing Card -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-5 col-md-8">
+                        <div class="pricing-card animate-pop-up-pricing">
+                            <!-- Card Header -->
+                            <div class="pricing-header">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <i class="bi bi-lightning-charge-fill pricing-icon"></i>
+                                    <span class="annual-save-badge" id="annualBadge">Save $48</span>
+                                </div>
+
+                                <h3 class="pricing-plan-name fed">STANDARD</h3>
+                                <div class="pricing-amount">
+                                    <span class="price" id="priceAmount">$20</span>
+                                    <span class="period mont" id="pricePeriod"> /month</span>
+                                </div>
+
+                                <p class="pricing-best-for mont weight-300">Best For:</p>
+                                <p class="pricing-description mont">Small Teams & Simple Use-cases (Pre-trained AI models)
+                                </p>
+                            </div>
+
+                            <!-- Pricing Stats -->
+                            <div class="pricing-stats">
+                                <div class="stat-item-pricing">
+                                    <div class="stat-number weight-500 font-18 gradi fed">10k</div>
+                                    <div class="stat-label weight-300 mont font-12">Requests</div>
+                                </div>
+                                <div class="stat-item-pricing">
+                                    <div class="stat-number weight-500 font-18 gradi fed">5</div>
+                                    <div class="stat-label weight-300 mont font-12">Users</div>
+                                </div>
+                                <div class="stat-item-pricing">
+                                    <div class="stat-number weight-500 font-18 gradi fed">Email</div>
+                                    <div class="stat-label weight-300 mont font-12">Support</div>
+                                </div>
+                            </div>
+
+                            <!-- Features List -->
+                            <div class="pricing-features">
+                                <h4 class="features-title mont text-white-50 weight-300 font-14">Includes:</h4>
+                                <ul class="features-list mont weight-300">
+                                    <li>
+                                        <span class="check-icon">
+                                            <i class="bi bi-check"></i>
+                                        </span>
+                                        <span>Multi-Lang OCR (India, Global IDs)</span>
+                                    </li>
+                                    <li>
+                                        <span class="check-icon">
+                                            <i class="bi bi-check"></i>
+                                        </span>
+                                        <span>Document OCR (PDF, PNG, JPG)</span>
+                                    </li>
+                                    <li>
+                                        <span class="check-icon">
+                                            <i class="bi bi-check"></i>
+                                        </span>
+                                        <span>Face Match & Liveness</span>
+                                    </li>
+                                    <li>
+                                        <span class="check-icon">
+                                            <i class="bi bi-check"></i>
+                                        </span>
+                                        <span>Driving Licenses / Passports</span>
+                                    </li>
+                                    <li>
+                                        <span class="check-icon">
+                                            <i class="bi bi-check"></i>
+                                        </span>
+                                        <span>Aadhar / PAN / Voter ID</span>
+                                    </li>
+                                    <li>
+                                        <span class="check-icon">
+                                            <i class="bi bi-check"></i>
+                                        </span>
+                                        <span>GST / Udyam</span>
+                                    </li>
+                                    <li>
+                                        <span class="check-icon">
+                                            <i class="bi bi-check"></i>
+                                        </span>
+                                        <span>& More</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- CTA Button -->
+                            <button class="btn btn-pricing-cta w-100 weight-300">
+                                Get Started <i class="bi bi-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="security-section py-5">
+            <div class="container">
+                <!-- Section Title -->
+                <div class="text-center mb-md-5 mb-3">
+                    <h2 class="features-heading fed mb-3 animate-pop-up-security">
+                        SECURE, SCALABLE, DEVELOPER-FRIENDLY
+                    </h2>
+                </div>
+
+                <!-- Security Cards -->
+                <div class="row g-4">
+                    <!-- Blue Card -->
+                    <div class="col-lg-6">
+                        <div class="security-card security-card-blue animate-pop-up-security">
+                            <div class="security-bg-effect">
+                                <div class="floating-dots"></div>
+                                <div class="scan-line"></div>
+                            </div>
+
+                            <div class="security-icon-container">
+                                <div class="icon-outer-ring"></div>
+                                <div class="icon-pulse-ring"></div>
+                                <div class="security-icon">
+                                    <i class="bi bi-shield-lock-fill"></i>
+                                </div>
+                                <div class="orbit-container">
+                                    <div class="orbit-dot orbit-1"></div>
+                                    <div class="orbit-dot orbit-2"></div>
+                                    <div class="orbit-dot orbit-3"></div>
+                                </div>
+                            </div>
+
+                            <h3 class="security-title fed">GDPR / HIPAA COMPLIANT</h3>
+                            <hr class="security-divider security-divider-blue">
+                            <div class="security-status">
+                                <span class="status-dot status-dot-blue"></span>
+                                <span class="status-text mont weight-300 s-blue">Active & Secure</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Purple Card -->
+                    <div class="col-lg-6">
+                        <div class="security-card security-card-purple animate-pop-up-security">
+                            <div class="security-bg-effect">
+                                <div class="floating-dots"></div>
+                                <div class="scan-line"></div>
+                            </div>
+
+                            <div class="security-icon-container">
+                                <div class="icon-outer-ring"></div>
+                                <div class="icon-pulse-ring"></div>
+                                <div class="security-icon">
+                                    <i class="bi bi-code-slash"></i>
+                                </div>
+                                <div class="orbit-container">
+                                    <div class="orbit-dot orbit-1"></div>
+                                    <div class="orbit-dot orbit-2"></div>
+                                    <div class="orbit-dot orbit-3"></div>
+                                </div>
+                            </div>
+
+                            <h3 class="security-title fed">REST API + SDKs</h3>
+                            <hr class="security-divider security-divider-purple">
+                            <div class="security-status">
+                                <span class="status-dot status-dot-purple"></span>
+                                <span class="status-text mont weight-300 s-purple">Active & Secure</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="grid-bg">
+                <div class="floating-particles"></div>
+            </div>
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="cta-heading fed mb-4 animate-pop-up-cta">
+                        READY TO AUTOMATE ID & DOCUMENT OCR?
+                    </h2>
+                    <p class="cta-description text-faded mont weight-300 mb-md-5 mb-3 animate-pop-up-cta">
+                        Nanoapp's OCR helps businesses worldwide process documents faster, safer, smarter.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 justify-content-center animate-pop-up-cta">
+                        <button class="btn btn-cta-primary font-14 mont weight-400 px-5 py-3">
+                            Start Free Trial <i class="bi bi-arrow-right ms-2"></i>
+                        </button>
+                        <button class="btn btn-cta-secondary font-14 mont weight-400 px-5 py-3">
+                            Request Demo 
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section py-5">
+            <div class="container">
+                <!-- Section Title -->
+                <div class="text-center mb-md-5 mb-3">
+                    <h2 class="features-heading fed mb-3 animate-pop-up-contact">
+                        DROP IN AND SAY HI
+                    </h2>
+                </div>
+
+                <div class="row g-5 d-flex justify-content-center">
+
+                    <!-- Left Column - Contact Info -->
+                    <div class="col-lg-5 animate-pop-left-contact">
+                        <p class="contact-intro text-faded mont weight-300 mb-md-3 mb-4">
+                            Ready when you are. Drop your message and we'll get back to you soon.
+                        </p>
+
+                        <!-- Contact Items -->
+                        <div class="contact-items">
+                            <!-- Phone -->
+                            <div class="contact-item">
+                                <div class="contact-icon contact-icon-blue">
+                                    <i class="bi bi-telephone-fill"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h5 class="contact-label weight-400 mont">Phone</h5>
+                                    <a href="tel:+916360291772" class="contact-value mont">+91 6360291772</a>
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="contact-item">
+                                <div class="contact-icon contact-icon-purple">
+                                    <i class="bi bi-envelope-fill"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h5 class="contact-label weight-400 mont">Email</h5>
+                                    <a href="mailto:info@nanoapp.ai" class="contact-value mont">info@nanoapp.ai</a>
+                                </div>
+                            </div>
+
+                            <!-- Address -->
+                            <div class="contact-item">
+                                <div class="contact-icon contact-icon-cyan">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h5 class="contact-label weight-400 mont">Address</h5>
+                                    <p class="contact-value mont">
+                                        123 Tech Park, Innovation District<br>
+                                        Bangalore, Karnataka 560001
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Column - Contact Form -->
+                    <div class="col-lg-6 animate-pop-right-contact">
+                        <form class="contact-form" id="contactForm" novalidate>
+                            <div class="mb-4">
+                                <input type="text" class="form-control contact-input" id="contactName"
+                                    placeholder="Your Name" required>
+                                <div class="invalid-feedback">
+                                    Please enter your name.
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <input type="email" class="form-control contact-input" id="contactEmail"
+                                    placeholder="Your Email" required>
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <input type="tel" class="form-control contact-input" id="contactPhone"
+                                    placeholder="Phone" pattern="[0-9+\-\s()]{10,}" required>
+                                <div class="invalid-feedback">
+                                    Please enter a valid phone number.
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <input type="text" class="form-control contact-input" id="contactCompany"
+                                    placeholder="Company/Organization" required>
+                                <div class="invalid-feedback">
+                                    Please enter your company/organization name.
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <textarea class="form-control contact-input" id="contactMessage" rows="5"
+                                    placeholder="Message" required></textarea>
+                                <div class="invalid-feedback">
+                                    Please enter your message.
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-contact-submit w-100">
+                                Send Message <i class="bi bi-send ms-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <div class="footer-divider"></div>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo -->
+                <div class="footer-logo" style="cursor: pointer;">
+                    <img src="assets/footer.png" alt="Nanoapp Logo">
+                </div>
+
+                <!-- Links -->
+                <div class="footer-links">
+                    <a href="#" class="footer-link mont">Privacy</a>
+                    <a href="#" class="footer-link mont">Sitemap</a>
+                    <a href="#" class="footer-link mont">Contact</a>
+                </div>
+
+                <!-- Copyright -->
+                <div class="footer-copyright">
+                    <p class="mont mb-0">© Nanoapp 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="mapscript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
