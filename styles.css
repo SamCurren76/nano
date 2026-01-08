@@ -6,9 +6,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Fix horizontal overflow on mobile */
 @media (max-width: 768px) {
-    /* Prevent body overflow */
     body {
         overflow-x: hidden;
         max-width: 100vw;
@@ -179,15 +177,15 @@
 }
 
 
-.weight-100 { font-weight: 100 !important; } /* Thin */
-.weight-200 { font-weight: 200 !important; } /* Extra Light */
-.weight-300 { font-weight: 300 !important; } /* Light */
-.weight-400 { font-weight: 400 !important; } /* Normal */
-.weight-500 { font-weight: 500 !important; } /* Medium */
-.weight-600 { font-weight: 600 !important; } /* Semi Bold */
-.weight-700 { font-weight: 700 !important; } /* Bold */
-.weight-800 { font-weight: 800 !important; } /* Extra Bold */
-.weight-900 { font-weight: 900 !important; } /* Black */
+.weight-100 { font-weight: 100 !important; } 
+.weight-200 { font-weight: 200 !important; }
+.weight-300 { font-weight: 300 !important; } 
+.weight-400 { font-weight: 400 !important; } 
+.weight-500 { font-weight: 500 !important; } 
+.weight-600 { font-weight: 600 !important; } 
+.weight-700 { font-weight: 700 !important; } 
+.weight-800 { font-weight: 800 !important; } 
+.weight-900 { font-weight: 900 !important; }
 
 body {
     background: radial-gradient(
@@ -315,7 +313,7 @@ body {
         transform: scale(0.98);
     }
     
-    /* Adjust navbar container for mobile */
+    /* navbar container for mobile */
     .navbar > .container {
         position: relative;
     }
@@ -337,7 +335,6 @@ body {
     }
 }
 
-/* Desktop - ensure normal behavior */
 @media (min-width: 992px) {
     .navbar-collapse {
         position: static;
@@ -383,7 +380,6 @@ main {
     padding-top: 100px; 
 }
 
-/* Parallax Background */
 .parallax-container {
     position: fixed;
     top: 0;
@@ -433,7 +429,6 @@ main {
         transform: translate(-50%, -50%) rotate(360deg);
     }
 }
-/* Individual Stars */
 .star {
     position: absolute;
     width: 6px;
@@ -462,7 +457,7 @@ main {
     transform: translate(50%, -50%);
 }
 
-/* Custom Cursor Styles */
+/* Cursor Styles */
 body.custom-cursor,
 body.custom-cursor * {
     cursor: none !important;
@@ -616,7 +611,6 @@ body.custom-cursor .switch-slider {
     font-size: 0.875rem;
 }
 
-/* CTA Buttons */
 .btn-primary-gradient {
     background: linear-gradient(90deg, #2B7FFF 0%, #AD46FF 100%);
     border: none;
@@ -661,7 +655,6 @@ body.custom-cursor .switch-slider {
 }
 
 
-/* Mac Style Preview Card */
 .preview-card {
     background: rgba(42, 45, 58, 0.9);
     backdrop-filter: blur(10px);
@@ -721,7 +714,6 @@ body.custom-cursor .switch-slider {
     opacity: 1;
 }
 
-/* Upload Area */
 .upload-area {
     padding: 24px;
 }
@@ -759,7 +751,6 @@ body.custom-cursor .switch-slider {
     margin: 0;
 }
 
-/* Data Preview Section */
 .data-preview {
     margin: 24px;
     background: rgba(26, 29, 40, 0.5);
@@ -814,7 +805,6 @@ body.custom-cursor .switch-slider {
 }
 
 
-/* Processing Area */
 .processing-area,
 .extracted-area {
     padding: 24px 24px 0 24px;
@@ -868,7 +858,6 @@ body.custom-cursor .switch-slider {
     letter-spacing: 1px;
 }
 
-/* Progress Bars */
 .progress-bars {
     margin-top: 20px;
     display: flex;
@@ -904,7 +893,6 @@ body.custom-cursor .switch-slider {
     }
 }
 
-/* Extract Button */
 .btn-extract {
     background: linear-gradient(90deg, #2B7FFF 0%, #AD46FF 100%);
     border: none;
@@ -920,7 +908,6 @@ body.custom-cursor .switch-slider {
     color: #ffffff;
 }
 
-/* Replace Button */
 .btn-replace {
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -937,7 +924,6 @@ body.custom-cursor .switch-slider {
     color: #ffffff;
 }
 
-/* Extracted Data Rows */
 .data-row {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
@@ -965,7 +951,6 @@ body.custom-cursor .switch-slider {
     color: #C27AFF;
 }
 
-/* Save Button */
 .btn-save {
     background: linear-gradient(90deg, #2B7FFF 0%, #AD46FF 100%);
     border: none;
@@ -987,7 +972,6 @@ body.custom-cursor .switch-slider {
     padding: 24px;
 }
 
-/* Data Preview Section */
 .data-preview {
     margin: 24px;
     background: rgba(26, 29, 40, 0.5);
@@ -1029,7 +1013,6 @@ body.custom-cursor .switch-slider {
     font-weight: 400;
 }
 
-/* Features Section */
 .features-section {
     position: relative;
     padding: 100px 0;
@@ -1049,7 +1032,6 @@ body.custom-cursor .switch-slider {
     pointer-events: none;
 }
 
-/* Features Heading */
 .features-heading {
     font-size: 2.5rem;
     font-weight: 400;
@@ -1060,7 +1042,6 @@ body.custom-cursor .switch-slider {
     letter-spacing: 1px;
 }
 
-/* Divider */
 .divider-container {
     display: flex;
     align-items: center;
@@ -1086,7 +1067,6 @@ body.custom-cursor .switch-slider {
     background: linear-gradient(90deg, #51A2FF 0%, #C27AFF 50%, #FB64B6 100%);
 }
 
-/* Feature Cards */
 .feature-card {
    background: linear-gradient(
   90deg,
@@ -1128,11 +1108,9 @@ body.custom-cursor .switch-slider {
 }
 
 .feature-card:hover {
-    /* transform: translateY(-10px); */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Color Variants */
 .feature-card[data-color="blue"] .feature-title {
      background: linear-gradient(
     90deg,
@@ -1244,7 +1222,6 @@ body.custom-cursor .switch-slider {
     opacity: 1;
 }
 
-/* Feature Content */
 .feature-content {
     display: flex;
     flex-direction: column;
@@ -1293,7 +1270,6 @@ body.custom-cursor .switch-slider {
     transform: translateY(0);
 }
 
-/* Feature Indicator */
 .feature-indicator {
     display: flex;
     align-items: center;
@@ -1321,7 +1297,6 @@ body.custom-cursor .switch-slider {
     height: 1px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .features-heading {
         font-size: 1.8rem;
@@ -1351,7 +1326,6 @@ body.custom-cursor .switch-slider {
     }
 }
 
-/* Diagram Section */
 .diagram-section {
     position: relative;
     padding: 150px 0;
@@ -1365,7 +1339,6 @@ body.custom-cursor .switch-slider {
     margin: 0 auto;
 }
 
-/* Central Circles */
 .central-circle {
     position: absolute;
     top: 50%;
@@ -1408,7 +1381,6 @@ body.custom-cursor .switch-slider {
 }
 
 
-/* Middle Circle with Glowing Effect */
 .middle-circle {
     position: absolute;
     top: 50%;
@@ -1493,7 +1465,6 @@ border-color: #AD46FF;
     border-radius: 50%;
     z-index: 1;
 }
-/* ...existing code... */
 
 .outer-circle {
     position: absolute;
@@ -1508,7 +1479,6 @@ border-color: #AD46FF;
     z-index: 1;
 }
 
-/* Orbiting Dots */
 .orbit-dot {
     position: absolute;
     width: 12px;
@@ -1540,7 +1510,6 @@ border-color: #AD46FF;
     }
 }
 
-/* Connection Lines */
 .connection-lines {
     position: absolute;
     top: 0;
@@ -1556,7 +1525,7 @@ border-color: #AD46FF;
     stroke-width: 1;
     stroke-linecap: round;
 }
-/* Diagram Cards */
+
 .diagram-card {
     position: absolute;
     background: linear-gradient(
@@ -1622,7 +1591,7 @@ border-color: #AD46FF;
     line-height: 1.5;
 }
 
-/* Card Positions */
+
 .card-top {
     top: 20px;
     left: 50%;
@@ -1663,7 +1632,7 @@ border-color: #AD46FF;
     transform: translateY(-50%) scale(1.1);
 }
 
-/* Responsive */
+
 @media (max-width: 992px) {
     .diagram-container {
         width: 600px;
@@ -1769,8 +1738,6 @@ border-color: #AD46FF;
 }
 
 
-
-/* Map Section */
 .map-section {
     padding: 80px 0;
     position: relative;
@@ -1797,7 +1764,6 @@ border-color: #AD46FF;
                 0 0 100px rgba(81, 162, 255, 0.2);
 }
 
-/* Map Stats */
 .map-stats {
     display: flex;
     justify-content: center;
@@ -1891,7 +1857,6 @@ background: linear-gradient(
     margin: 0;
 }
 
-/* Map Wrapper */
 .map-wrapper {
     background: #090a21;
     border: 2px solid rgba(255, 255, 255, 0.15);
@@ -1906,7 +1871,6 @@ background: linear-gradient(
     overflow: hidden;
 }
 
-/* Map Legend */
 .map-legend {
     display: flex;
     align-items: center;
@@ -1935,7 +1899,6 @@ background: linear-gradient(
     font-weight: 400;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .map-legend {
         flex-direction: column;
@@ -1964,7 +1927,6 @@ background: linear-gradient(
     }
 }
 
-/* Responsive */
 @media (max-width: 992px) {
     .map-container {
         padding: 30px 20px;
@@ -2068,15 +2030,11 @@ background: linear-gradient(
 }
 
 
-
-
-/* Pricing Section */
 .pricing-section {
     padding: 100px 0;
     position: relative;
 }
 
-/* Billing Toggle */
 .billing-toggle-container {
     display: flex;
     align-items: center;
@@ -2102,7 +2060,6 @@ background: linear-gradient(
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* Modern Switch */
 .billing-switch {
     position: relative;
     display: inline-block;
@@ -2145,7 +2102,6 @@ background: linear-gradient(
     transform: translateX(30px);
 }
 
-/* Save Badge */
 .save-badge {
     background: rgba(0, 201, 80, 0.20);
     border: 1px solid rgba(0, 201, 80, 0.30);
@@ -2156,7 +2112,7 @@ background: linear-gradient(
     font-weight: 500;
 }
 
-/* Pricing Card */
+
 .pricing-card {
     background: rgb(22 28 51 / 80%);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -2197,13 +2153,13 @@ background: linear-gradient(
                 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Card Content */
+
 .pricing-card > * {
     position: relative;
     z-index: 1;
 }
 
-/* Pricing Header */
+
 .pricing-header {
     margin-bottom: 30px;
 }
@@ -2288,7 +2244,6 @@ background: linear-gradient(
     margin: 0;
 }
 
-/* Pricing Stats */
 .pricing-stats {
     display: flex;
     justify-content: space-between;
@@ -2318,7 +2273,7 @@ background: linear-gradient(
     letter-spacing: 1px;
 }
 
-/* Features List */
+
 .pricing-features {
     margin-bottom: 30px;
 }
@@ -2366,7 +2321,6 @@ background: linear-gradient(
     font-size: 0.75rem;
 }
 
-/* CTA Button */
 .btn-pricing-cta {
     background: linear-gradient(
   90deg,
@@ -2389,7 +2343,7 @@ background: linear-gradient(
     color: #ffffff;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .pricing-section {
         padding: 60px 0;
@@ -2427,13 +2381,11 @@ background: linear-gradient(
 }
 
 
-/* Security Section */
 .security-section {
     padding: 100px 0;
     position: relative;
 }
 
-/* Security Cards */
 .security-card {
     position: relative;
     border-radius: 24px;
@@ -2474,7 +2426,6 @@ background: linear-gradient(
     transform: translateY(-5px);
 }
 
-/* Background Effects */
 .security-bg-effect {
     position: absolute;
     top: 0;
@@ -2485,7 +2436,6 @@ background: linear-gradient(
     overflow: hidden;
 }
 
-/* Floating Dots */
 .floating-dots {
     position: absolute;
     width: 100%;
@@ -2553,7 +2503,7 @@ background: linear-gradient(
     }
 }
 
-/* Scan Line Effect */
+
 .scan-line {
     position: absolute;
     top: 0;
@@ -2583,7 +2533,7 @@ background: linear-gradient(
     }
 }
 
-/* Icon Container */
+
 .security-icon-container {
     position: relative;
     width: 120px;
@@ -2592,7 +2542,7 @@ background: linear-gradient(
     z-index: 1;
 }
 
-/* Outer Ring */
+
 .icon-outer-ring {
     position: absolute;
     top: 50%;
@@ -2615,7 +2565,6 @@ background: linear-gradient(
     box-shadow: 0 0 20px rgba(173, 70, 255, 0.5);
 }
 
-/* Pulse Ring */
 .icon-pulse-ring {
     position: absolute;
     top: 50%;
@@ -2648,7 +2597,6 @@ background: linear-gradient(
     }
 }
 
-/* Security Icon */
 .security-icon {
     position: absolute;
     top: 50%;
@@ -2675,7 +2623,6 @@ background: linear-gradient(
     color: #ffffff;
 }
 
-/* Orbit Container */
 .orbit-container {
     position: absolute;
     top: 50%;
@@ -2729,7 +2676,6 @@ background: linear-gradient(
     transform: translateY(-50%);
 }
 
-/* Security Title */
 .security-title {
     font-size: 1.75rem;
     color: #ffffff;
@@ -2738,7 +2684,6 @@ background: linear-gradient(
     z-index: 1;
 }
 
-/* Security Divider */
 .security-divider {
     width: 100px;
     height: 3px;
@@ -2763,7 +2708,6 @@ background: linear-gradient(
     width: 300px;
 }
 
-/* Security Status */
 .security-status {
     margin-top: 20px;
     display: flex;
@@ -2811,7 +2755,6 @@ background: linear-gradient(
     color: #C27AFF;
 }
 
-/* Responsive */
 @media (max-width: 992px) {
     .security-section {
         padding: 60px 0;
@@ -2905,16 +2848,12 @@ background: linear-gradient(
     }
 }
 
-
-
-/* CTA Section */
 .cta-section {
     position: relative;
     padding: 40px 0;
     overflow: hidden;
 }
 
-/* Grid Background with Floating Particles */
 .cta-section .grid-bg {
     position: absolute;
     top: 0;
@@ -2928,7 +2867,7 @@ background: linear-gradient(
     pointer-events: none;
 }
 
-/* Floating Particles */
+
 .floating-particles {
     position: absolute;
     width: 100%;
@@ -2938,7 +2877,6 @@ background: linear-gradient(
     left: 0;
 }
 
-/* CTA Content */
 .cta-section .container {
     position: relative;
     z-index: 1;
@@ -2961,7 +2899,6 @@ background: linear-gradient(
     margin-right: auto;
 }
 
-/* CTA Buttons */
 .btn-cta-primary {
     background: linear-gradient(90deg, #2B7FFF 0%, #AD46FF 100%);
     border: none;
@@ -2995,7 +2932,7 @@ background: linear-gradient(
     color: #ffffff;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .cta-section {
         padding: 80px 0;
@@ -3026,7 +2963,6 @@ background: linear-gradient(
 }
 
 
-/* Contact Section */
 .contact-section {
     padding: 100px 0;
     position: relative;
@@ -3038,7 +2974,6 @@ background: linear-gradient(
     line-height: 1.8;
 }
 
-/* Contact Items */
 .contact-items {
     display: flex;
     flex-direction: column;
@@ -3121,7 +3056,6 @@ background: linear-gradient(
     color: #51A2FF;
 }
 
-/* Contact Form */
 .contact-form {
 
     backdrop-filter: blur(10px);
@@ -3168,7 +3102,6 @@ background: linear-gradient(
     display: block;
 }
 
-/* Submit Button */
 .btn-contact-submit {
     background: linear-gradient(90deg, #2B7FFF 0%, #AD46FF 100%);
     border: none;
@@ -3190,7 +3123,6 @@ background: linear-gradient(
     transform: translateY(0);
 }
 
-/* Responsive */
 @media (max-width: 992px) {
     .contact-section {
         padding: 60px 0;
@@ -3234,8 +3166,6 @@ background: linear-gradient(
 }
 
 
-
-/* Footer */
 footer {
     position: relative;
     padding: 30px 0;
@@ -3297,7 +3227,6 @@ footer {
     font-size: 0.9375rem;
 }
 
-/* Responsive */
 @media (max-width: 992px) {
     .footer-content {
         justify-content: center;
@@ -3375,8 +3304,6 @@ footer {
 }
 
 
-
-/* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
     bottom: 0px;
@@ -3448,14 +3375,12 @@ footer {
     }
 }
 
-/* Responsive - Hide on mobile */
 @media (max-width: 768px) {
     .scroll-indicator {
         display: none;
     }
 }
 
-/* Hide scroll indicator when scrolling past hero section */
 @media (min-width: 769px) {
     .scroll-indicator.hidden {
         opacity: 0;
@@ -3464,7 +3389,6 @@ footer {
     }
 }
 
-/* Reusable pop-in-from-left animation */
 .animate-pop-left {
     opacity: 0;
     transform: translateX(-60px) scale(0.96);
@@ -3476,7 +3400,6 @@ footer {
     transform: translateX(0) scale(1);
 }
 
-/* Reusable pop-in-from-right animation */
 .animate-pop-right {
     opacity: 0;
     transform: translateX(60px) scale(0.96);
@@ -3488,7 +3411,7 @@ footer {
     transform: translateX(0) scale(1);
 }
 
-/* Animate up from bottom */
+
 .animate-pop-up {
     opacity: 0;
     transform: translateY(60px) scale(0.96);
@@ -3501,10 +3424,8 @@ footer {
 }
 
 
-/* Animate up from bottom for diagram section */
 .animate-pop-up-diagram {
     opacity: 0;
-    /* Don't use transform here - it conflicts with card positioning */
     transition: opacity 0.7s cubic-bezier(.6,1.5,.6,1);
 }
 
@@ -3512,10 +3433,8 @@ footer {
     opacity: 1;
 }
 
-/* Special handling for diagram cards to preserve their positioning */
 .diagram-card.animate-pop-up-diagram {
     opacity: 0;
-    /* Use a CSS variable for the animation offset */
     --animate-offset: 60px;
     transition: opacity 0.7s cubic-bezier(.6,1.5,.6,1);
 }
@@ -3560,7 +3479,6 @@ footer {
     transition: opacity 0.7s cubic-bezier(.6,1.5,.6,1), transform 0.7s cubic-bezier(.6,1.5,.6,1);
 }
 
-/* For central circle and other non-card elements */
 .central-circle.animate-pop-up-diagram,
 .features-heading.animate-pop-up-diagram,
 .text-faded.animate-pop-up-diagram {
@@ -3576,20 +3494,16 @@ footer {
 }
 
 
-/* For central circle - preserve centering transform */
 .central-circle.animate-pop-up-diagram {
     opacity: 0;
-    /* Don't override the centering transform */
     transition: opacity 0.7s cubic-bezier(.6,1.5,.6,1);
 }
 
 .central-circle.animate-pop-up-diagram.in-view {
     opacity: 1;
-    /* Keep the original centering transform */
     transform: translate(-50%, -50%);
 }
 
-/* For heading and subtitle - these don't have positioning transforms */
 .features-heading.animate-pop-up-diagram,
 .text-faded.animate-pop-up-diagram {
     transform: translateY(60px) scale(0.96);
@@ -3603,7 +3517,6 @@ footer {
 }
 
 
-/* Animate up from bottom for map section */
 .animate-pop-up-map {
     opacity: 0;
     transform: translateY(60px) scale(0.96);
@@ -3616,7 +3529,6 @@ footer {
 }
 
 
-/* Animate up from bottom for pricing section */
 .animate-pop-up-pricing {
     opacity: 0;
     transform: translateY(60px) scale(0.96);
@@ -3629,7 +3541,6 @@ footer {
 }
 
 
-/* Animate up from bottom for security section */
 .animate-pop-up-security {
     opacity: 0;
     transform: translateY(60px) scale(0.96);
@@ -3641,8 +3552,6 @@ footer {
     transform: translateY(0) scale(1);
 }
 
-
-/* Animate up from bottom for CTA section */
 .animate-pop-up-cta {
     opacity: 0;
     transform: translateY(60px) scale(0.96);
@@ -3655,7 +3564,6 @@ footer {
 }
 
 
-/* Animate up from bottom for contact section heading */
 .animate-pop-up-contact {
     opacity: 0;
     transform: translateY(60px) scale(0.96);
@@ -3667,7 +3575,6 @@ footer {
     transform: translateY(0) scale(1);
 }
 
-/* Animate from left for contact section */
 .animate-pop-left-contact {
     opacity: 0;
     transform: translateX(-60px) scale(0.96);
@@ -3679,7 +3586,6 @@ footer {
     transform: translateX(0) scale(1);
 }
 
-/* Animate from right for contact section */
 .animate-pop-right-contact {
     opacity: 0;
     transform: translateX(60px) scale(0.96);
@@ -3706,7 +3612,6 @@ footer {
 }
 
 
-/* Mobile Use Case Cards */
 .mobile-use-cases {
     padding: 0 15px;
 }
@@ -3764,7 +3669,6 @@ footer {
     line-height: 1.3;
 }
 
-/* Animation for mobile cards */
 .animate-pop-up-mobile-use-case {
     opacity: 0;
     transform: translateY(30px) scale(0.96);
@@ -3776,7 +3680,6 @@ footer {
     transform: translateY(0) scale(1);
 }
 
-/* Hide desktop diagram on mobile */
 @media (max-width: 767px) {
     .diagram-section {
         padding: 60px 0;
@@ -3880,9 +3783,8 @@ footer {
 }
 
 
-/* Always active hover effects on mobile/tablet */
+/* Always active hover effects on mobile */
 @media (max-width: 992px) {
-    /* Security Cards - Always show hover effects */
     .security-card {
         transform: translateY(-5px);
     }
@@ -3915,7 +3817,6 @@ footer {
         width: 300px;
     }
     
-    /* Feature Cards - Always show hover effects */
     .feature-card {
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
@@ -3938,8 +3839,6 @@ footer {
         max-height: 100px;
         transform: translateY(0);
     }
-    
-    /* Diagram Cards - Always show hover effects */
     .diagram-card {
         transform: scale(1.05);
         box-shadow: 0 0 30px #0d6efd,
@@ -3951,8 +3850,7 @@ footer {
         background: linear-gradient(135deg, rgba(81, 162, 255, 0.4) 0%, rgba(173, 70, 255, 0.4) 100%);
         transform: rotate(360deg);
     }
-    
-    /* Pricing Card - Always show hover effects */
+
     .pricing-card::before {
         opacity: 1;
     }
@@ -3963,7 +3861,6 @@ footer {
                     0 20px 40px rgba(0, 0, 0, 0.4);
     }
     
-    /* Map Container - Always show hover effects */
     .map-container {
         box-shadow: 0 0 60px rgba(81, 162, 255, 0.4),
                     0 0 100px rgba(81, 162, 255, 0.2);
@@ -3974,8 +3871,7 @@ footer {
         transform: translateY(-5px);
         box-shadow: 0 8px 24px rgba(81, 162, 255, 0.3);
     }
-    
-    /* Contact Icons - Always show hover effects */
+
     .contact-icon {
         transform: scale(1.1);
         box-shadow: 0 0 20px rgba(81, 162, 255, 0.4);
@@ -3983,9 +3879,8 @@ footer {
 }
 
 
-/* Disable all animations on mobile */
+/* Disable animations on mobile */
 @media (max-width: 768px) {
-    /* Remove all animation classes on mobile */
     .animate-pop-left,
     .animate-pop-right,
     .animate-pop-up,
@@ -4003,7 +3898,6 @@ footer {
         transition: none !important;
     }
     
-    /* Ensure diagram cards maintain their positions */
     .diagram-card.card-top {
         transform: translateX(-50%) !important;
     }
@@ -4025,9 +3919,7 @@ footer {
     }
 }
 
-/* ...existing code... */
 
-/* Ensure sections have position relative for pseudo-elements */
 .hero-section,
 .features-section,
 .diagram-section,
@@ -4040,9 +3932,7 @@ footer {
     overflow: hidden;
 }
 
-/* Enhanced Milky Way Glows - Much more visible scattered clouds */
 
-/* Hero Section - Multiple bright glows */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -4075,7 +3965,6 @@ footer {
     animation: cloudDrift2 25s ease-in-out infinite;
 }
 
-/* Features Section - Scattered bright spots */
 .features-section::before {
     content: '';
     position: absolute;
@@ -4108,7 +3997,6 @@ footer {
     animation: cloudDrift4 26s ease-in-out infinite;
 }
 
-/* Diagram Section - Asymmetric bright clouds */
 .diagram-section::before {
     content: '';
     position: absolute;
@@ -4141,7 +4029,6 @@ footer {
     animation: cloudDrift1 27s ease-in-out infinite;
 }
 
-/* Map Section - Edge bright glows */
 .map-section::before {
     content: '';
     position: absolute;
@@ -4174,7 +4061,6 @@ footer {
     animation: cloudDrift3 26s ease-in-out infinite;
 }
 
-/* Pricing Section - Centered bright glow */
 .pricing-section::before {
     content: '';
     position: absolute;
@@ -4208,7 +4094,6 @@ footer {
     animation: cloudDrift5 23s ease-in-out infinite;
 }
 
-/* Security Section - Dual bright glows */
 .security-section::before {
     content: '';
     position: absolute;
@@ -4241,7 +4126,6 @@ footer {
     animation: cloudDrift2 27s ease-in-out infinite;
 }
 
-/* CTA Section - Dramatic bright center */
 .cta-section::before {
     content: '';
     position: absolute;
@@ -4276,7 +4160,6 @@ footer {
     animation: cloudDrift3 23s ease-in-out infinite;
 }
 
-/* Contact Section - Scattered organic bright spots */
 .contact-section::before {
     content: '';
     position: absolute;
@@ -4309,7 +4192,7 @@ footer {
     animation: cloudDrift5 25s ease-in-out infinite;
 }
 
-/* Ensure content is above glow effects */
+
 .hero-section .container,
 .features-section .container,
 .diagram-section .container,
@@ -4322,7 +4205,6 @@ footer {
     z-index: 1;
 }
 
-/* Enhanced drift animations - more visible movement */
 @keyframes cloudDrift1 {
     0%, 100% {
         transform: translate(0, 0);
@@ -4412,5 +4294,3 @@ footer {
         opacity: 1;
     }
 }
-
-/* ...existing code... */

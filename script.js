@@ -130,7 +130,7 @@
             });
         }, { 
             threshold: 0.3,  // Trigger when 30% of the section is visible
-            rootMargin: '-50px 0px'  // Add some margin to delay trigger
+            rootMargin: '-50px 0px' 
         });
 
         observer.observe(diagramSection);

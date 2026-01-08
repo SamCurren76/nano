@@ -14,16 +14,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Federo&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-
-    <!-- amCharts Scripts -->
-    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 </head>
 
 <body>
-    <!-- Background Parallax Container -->
     <div class="parallax-container d-none d-lg-block">
         <div class="parallax-bg">
             <img src="assets/atom.png" alt="Background Element" class="parallax-image">
@@ -79,7 +72,6 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section class="hero-section" id="heroSection">
             <div class="container pb-5 my-md-5 my-0">
                 <div class="row align-items-start">
@@ -98,7 +90,6 @@
                             transforms any document into actionable intelligence.
                         </p>
 
-                        <!-- Stats -->
                         <div class="row g-0 mb-4">
                             <div class="col-md-2 col-3">
                                 <div class="stat-item">
@@ -129,7 +120,6 @@
                             </div>
                         </div>
 
-                        <!-- CTA Buttons -->
                         <div class="d-flex flex-wrap gap-3">
                             <button class="btn btn-primary-gradient font-14 mont px-4 py-3">
                                 Try Demo Now <i class="bi bi-arrow-right ms-2"></i>
@@ -140,9 +130,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 animate-pop-right">
-                        <!-- Mac Style Preview Card -->
                         <div class="preview-card">
-                            <!-- Top Bar -->
                             <div class="preview-header">
                                 <div class="window-controls">
                                     <span class="control-dot dot-red"></span>
@@ -167,14 +155,12 @@
                                 </div>
                             </div>
 
-                            <!-- Processing Area (Hidden Initially) -->
                             <div class="processing-area" id="processingArea" style="display: none;">
                                 <div class="document-preview">
                                     <div class="doc-preview-header">
                                         <div class="doc-icon-container">
                                             <img src="assets/scan.svg" alt="">
                                         </div>
-                                        <!-- <i class="bi bi-x-circle doc-close-icon" id="closeDoc"></i> -->
                                         <span class="doc-type-label mont">DRIVER LICENSE</span>
                                     </div>
                                     <div class="progress-bars" id="progressBars">
@@ -194,8 +180,6 @@
                                     Extract Text
                                 </button>
                             </div>
-
-                            <!-- Extracted View (Hidden Initially) -->
                             <div class="extracted-area" id="extractedArea" style="display: none;">
                                 <div class="document-preview">
                                     <div class="doc-preview-header">
@@ -210,7 +194,6 @@
                                 </button>
                             </div>
 
-                            <!-- Extracted Data Section -->
                             <div class="data-preview">
                                 <div class="data-header d-flex align-items-center">
                                     <span class="fed"> <span class="me-2"><img class="mb-1" src="assets/doc.svg"
@@ -235,7 +218,6 @@
         <section class="features-section py-5">
             <div class="grid-bg"></div>
             <div class="container">
-                <!-- Section Title -->
                 <div class="text-center mb-5">
                     <h2 class="features-heading fed mb-3 animate-pop-up">
                         THE ULTIMATE OCR FOR GLOBAL DOCUMENTS
@@ -246,8 +228,6 @@
                         <span class="divider-line"></span>
                     </div>
                 </div>
-
-                <!-- Feature Cards -->
                 <div class="row g-4">
                     <div class="col-lg col-md-6 col-sm-6">
                         <div class="feature-card animate-pop-up" data-color="blue">
@@ -330,7 +310,6 @@
                     <p class="text-faded mont weight-300 animate-pop-up-diagram">THE ULTIMATE OCR FOR GLOBAL DOCUMENTS</p>
                 </div>
                 <div class="diagram-container d-none d-md-block">
-                    <!-- Central Circle with Image -->
                     <div class="central-circle animate-pop-up-diagram">
                         <div class="inner-circle">
                             <img src="assets/logo-main.svg" alt="Central Icon">
@@ -345,19 +324,13 @@
                         </div>
                     </div>
 
-                    <!-- Connecting Lines -->
                     <svg class="connection-lines" viewBox="0 0 800 800">
-                        <!-- Top to Left diagonal line -->
                         <line x1="360" y1="150" x2="240" y2="310" stroke="#9e9e9e" stroke-width="1" />
-                        <!-- Left to Bottom diagonal line -->
                         <line x1="240" y1="490" x2="360" y2="650" stroke="#9e9e9e" stroke-width="1" />
-                        <!-- Bottom to Right diagonal line -->
                         <line x1="440" y1="650" x2="560" y2="490" stroke="#9e9e9e" stroke-width="1" />
-                        <!-- Right to Top diagonal line -->
                         <line x1="560" y1="310" x2="440" y2="150" stroke="#9e9e9e" stroke-width="1" />
                     </svg>
 
-                    <!-- Feature Cards -->
                     <div class="diagram-card card-top py-5 animate-pop-up-diagram">
                         <div class="card-icon">
                             <i class="bi bi-shield-check"></i>
@@ -436,7 +409,6 @@
                     <p class="text-faded mont weight-300 animate-pop-up-map">THE ULTIMATE OCR FOR GLOBAL DOCUMENTS</p>
                 </div>
                 <div class="map-container animate-pop-up-map">
-                    <!-- Stats Boxes -->
                     <div class="map-stats">
                         <div class="map-stat-box animate-pop-up-map">
                             <i class="bi bi-translate stat-box-icon"></i>
@@ -454,7 +426,6 @@
                         </div>
                     </div>
 
-                    <!-- Map Wrapper -->
                     <div class="map-wrapper animate-pop-up-map">
                         <div id="chartdiv"></div>
                     </div>
@@ -479,13 +450,10 @@
 
         <section class="pricing-section py-5">
             <div class="container">
-                <!-- Section Title -->
                 <div class="text-center mb-5">
                     <h2 class="features-heading fed mb-4 animate-pop-up-pricing">
                         FLEXIBLE PRICING
                     </h2>
-
-                    <!-- Billing Toggle -->
                     <div class="billing-toggle-container animate-pop-up-pricing">
                         <span class="billing-label monthly-label active">Monthly</span>
                         <label class="billing-switch">
@@ -496,12 +464,9 @@
                         <span class="save-badge">Save 20%</span>
                     </div>
                 </div>
-
-                <!-- Pricing Card -->
                 <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-8">
                         <div class="pricing-card animate-pop-up-pricing">
-                            <!-- Card Header -->
                             <div class="pricing-header">
                                 <div class="d-flex align-items-center justify-content-between mb-3">
                                     <i class="bi bi-lightning-charge-fill pricing-icon"></i>
@@ -518,8 +483,6 @@
                                 <p class="pricing-description mont">Small Teams & Simple Use-cases (Pre-trained AI models)
                                 </p>
                             </div>
-
-                            <!-- Pricing Stats -->
                             <div class="pricing-stats">
                                 <div class="stat-item-pricing">
                                     <div class="stat-number weight-500 font-18 gradi fed">10k</div>
@@ -534,8 +497,6 @@
                                     <div class="stat-label weight-300 mont font-12">Support</div>
                                 </div>
                             </div>
-
-                            <!-- Features List -->
                             <div class="pricing-features">
                                 <h4 class="features-title mont text-white-50 weight-300 font-14">Includes:</h4>
                                 <ul class="features-list mont weight-300">
@@ -583,8 +544,6 @@
                                     </li>
                                 </ul>
                             </div>
-
-                            <!-- CTA Button -->
                             <button class="btn btn-pricing-cta w-100 weight-300">
                                 Get Started <i class="bi bi-arrow-right ms-2"></i>
                             </button>
@@ -596,16 +555,12 @@
 
         <section class="security-section py-5">
             <div class="container">
-                <!-- Section Title -->
                 <div class="text-center mb-md-5 mb-3">
                     <h2 class="features-heading fed mb-3 animate-pop-up-security">
                         SECURE, SCALABLE, DEVELOPER-FRIENDLY
                     </h2>
                 </div>
-
-                <!-- Security Cards -->
                 <div class="row g-4">
-                    <!-- Blue Card -->
                     <div class="col-lg-6">
                         <div class="security-card security-card-blue animate-pop-up-security">
                             <div class="security-bg-effect">
@@ -634,8 +589,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Purple Card -->
                     <div class="col-lg-6">
                         <div class="security-card security-card-purple animate-pop-up-security">
                             <div class="security-bg-effect">
@@ -694,7 +647,6 @@
 
         <section class="contact-section py-5">
             <div class="container">
-                <!-- Section Title -->
                 <div class="text-center mb-md-5 mb-3">
                     <h2 class="features-heading fed mb-3 animate-pop-up-contact">
                         DROP IN AND SAY HI
@@ -703,15 +655,12 @@
 
                 <div class="row g-5 d-flex justify-content-center">
 
-                    <!-- Left Column - Contact Info -->
                     <div class="col-lg-5 animate-pop-left-contact">
                         <p class="contact-intro text-faded mont weight-300 mb-md-3 mb-4">
                             Ready when you are. Drop your message and we'll get back to you soon.
                         </p>
 
-                        <!-- Contact Items -->
                         <div class="contact-items">
-                            <!-- Phone -->
                             <div class="contact-item">
                                 <div class="contact-icon contact-icon-blue">
                                     <i class="bi bi-telephone-fill"></i>
@@ -722,7 +671,6 @@
                                 </div>
                             </div>
 
-                            <!-- Email -->
                             <div class="contact-item">
                                 <div class="contact-icon contact-icon-purple">
                                     <i class="bi bi-envelope-fill"></i>
@@ -733,7 +681,6 @@
                                 </div>
                             </div>
 
-                            <!-- Address -->
                             <div class="contact-item">
                                 <div class="contact-icon contact-icon-cyan">
                                     <i class="bi bi-geo-alt-fill"></i>
@@ -748,7 +695,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Right Column - Contact Form -->
                     <div class="col-lg-6 animate-pop-right-contact">
                         <form class="contact-form" id="contactForm" novalidate>
                             <div class="mb-3">
@@ -799,27 +745,20 @@
                 </div>
             </div>
         </section>
-
-
     </main>
 
     <footer>
         <div class="footer-divider"></div>
         <div class="container">
             <div class="footer-content">
-                <!-- Logo -->
                 <div class="footer-logo" style="cursor: pointer;">
                     <img src="assets/footer.png" alt="Nanoapp Logo">
                 </div>
-
-                <!-- Links -->
                 <div class="footer-links">
                     <a href="#" class="footer-link mont">Privacy</a>
                     <a href="#" class="footer-link mont">Sitemap</a>
                     <a href="#" class="footer-link mont">Contact</a>
                 </div>
-
-                <!-- Copyright -->
                 <div class="footer-copyright">
                     <p class="mont mb-0">© Nanoapp 2025</p>
                 </div>
@@ -827,7 +766,10 @@
         </div>
     </footer>
 
-
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
     <script src="mapscript.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>

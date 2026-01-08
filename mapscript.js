@@ -1,58 +1,31 @@
 // Map Chart Implementation
 (function() {
-    console.log('Map script started');
-    
-    // Check if amCharts is loaded
-    console.log('am5 available:', typeof am5 !== 'undefined');
-    console.log('am5map available:', typeof am5map !== 'undefined');
-    console.log('am5geodata_worldLow available:', typeof am5geodata_worldLow !== 'undefined');
 
     function initializeMap() {
-        console.log('Initializing map...');
-        
-        // Check if chartdiv exists
         const chartDiv = document.getElementById('chartdiv');
-        console.log('chartdiv element found:', chartDiv !== null);
-        
-        if (!chartDiv) {
-            console.error('chartdiv element not found');
-            return;
-        }
-
-        // Wait for amCharts to load
-        if (typeof am5 === 'undefined') {
-            console.error('amCharts library not loaded');
-            return;
-        }
-
         am5.ready(function() {
-            console.log('am5.ready triggered');
-            
             try {
                 // Dispose any existing instances
                 am5.array.each(am5.registry.rootElements, function(root) {
                     if (root.dom && root.dom.id === "chartdiv") {
-                        console.log('Disposing existing root');
                         root.dispose();
                     }
                 });
 
                 // Create root element
-                console.log('Creating root...');
                 var root = am5.Root.new("chartdiv");
 
                 // Set themes
                 root.setThemes([am5themes_Animated.new(root)]);
 
                 // Create the map chart - completely static
-                console.log('Creating map chart...');
                 var chart = root.container.children.push(
                     am5map.MapChart.new(root, {
                         panX: "none",
                         panY: "none",
                         projection: am5map.geoMercator(),
                         homeZoomLevel: 2.5,
-                        homeGeoPoint: { longitude: 20, latitude: 10 }, // Changed from 30 to 10 to move map down
+                        homeGeoPoint: { longitude: 20, latitude: 10 }, 
                         wheelable: false,
                         pinchZoom: false,
                         zoomControl: false,
@@ -92,7 +65,6 @@
                 }, { passive: true, capture: true });
 
                 // Create series for background fill
-                console.log('Creating background series...');
                 var backgroundSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {}));
                 backgroundSeries.mapPolygons.template.setAll({
                     fill: am5.color(0x090a21),
@@ -106,7 +78,6 @@
                 });
 
                 // Create main polygon series for countries
-                console.log('Creating polygon series...');
                 var polygonSeries = chart.series.push(
                     am5map.MapPolygonSeries.new(root, {
                         geoJSON: am5geodata_worldLow
@@ -130,7 +101,6 @@
                 });
 
                 // Create point series for markers
-                console.log('Creating point series...');
                 var pointSeries = chart.series.push(am5map.MapPointSeries.new(root, {}));
 
                 pointSeries.bullets.push(function() {
@@ -203,7 +173,6 @@
                     { title: "Pretoria", latitude: -25.7463, longitude: 28.1876 }
                 ];
 
-                console.log('Adding city markers...');
                 cities.forEach(function(city) {
                     pointSeries.data.push({
                         geometry: { type: "Point", coordinates: [city.longitude, city.latitude] },
@@ -214,7 +183,6 @@
                 // Make stuff animate on load
                 chart.appear(1000, 100);
 
-                console.log('Map initialized successfully!');
             } catch (error) {
                 console.error('Error initializing map:', error);
             }
@@ -224,12 +192,9 @@
     // Wait for window to fully load
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOMContentLoaded fired');
-            // Add a small delay to ensure amCharts is fully loaded
             setTimeout(initializeMap, 500);
         });
     } else {
-        console.log('DOM already loaded');
         setTimeout(initializeMap, 500);
     }
 })();
