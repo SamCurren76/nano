@@ -381,6 +381,542 @@
 
 })();
 
+
+(function() {
+    // Only run on features page
+    if (!document.querySelector('.features-hero-section')) return;
+
+    function animateOnView(selector, stagger = 0, initialDelay = 0) {
+        const elements = document.querySelectorAll(selector);
+        if (!elements.length) return;
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry, idx) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('in-view');
+                    }, initialDelay + idx * stagger);
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2, rootMargin: '-50px 0px' });
+
+        elements.forEach(el => observer.observe(el));
+    }
+
+    // Hero Section Animation (on page load)
+    function animateHeroSection() {
+        const heroElements = document.querySelectorAll('.features-hero-section .animate-pop-up-hero');
+        
+        heroElements.forEach((element, i) => {
+            setTimeout(() => {
+                element.classList.add('in-view');
+            }, i * 180); // Stagger each element by 180ms
+        });
+    }
+
+    // Capabilities Section Animation
+    function animateCapabilitiesSection() {
+        const capabilitiesSection = document.querySelector('.capabilities-section');
+        if (!capabilitiesSection) return;
+
+        const heading = capabilitiesSection.querySelector('.capabilities-heading');
+        const description = capabilitiesSection.querySelector('.capabilities-description');
+        const cards = capabilitiesSection.querySelectorAll('.capability-card');
+
+        let animated = false;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animated) {
+                    animated = true;
+                    
+                    if (heading) {
+                        heading.classList.add('animate-pop-up-capability');
+                        setTimeout(() => heading.classList.add('in-view'), 0);
+                    }
+                    
+                    if (description) {
+                        description.classList.add('animate-pop-up-capability');
+                        setTimeout(() => description.classList.add('in-view'), 180);
+                    }
+                    
+                    cards.forEach((card, i) => {
+                        card.classList.add('animate-pop-up-capability');
+                        setTimeout(() => card.classList.add('in-view'), 360 + i * 120);
+                    });
+                }
+            });
+        }, { threshold: 0.2, rootMargin: '-50px 0px' });
+
+        observer.observe(capabilitiesSection);
+    }
+
+    // Developer Section Animation
+    function animateDeveloperSection() {
+        const developerSection = document.querySelector('.developer-section');
+        if (!developerSection) return;
+
+        const heading = developerSection.querySelector('.developer-heading');
+        const description = developerSection.querySelector('.developer-description');
+        const cards = developerSection.querySelectorAll('.developer-card');
+
+        let animated = false;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animated) {
+                    animated = true;
+                    
+                    if (heading) {
+                        heading.classList.add('animate-pop-up-developer');
+                        setTimeout(() => heading.classList.add('in-view'), 0);
+                    }
+                    
+                    if (description) {
+                        description.classList.add('animate-pop-up-developer');
+                        setTimeout(() => description.classList.add('in-view'), 180);
+                    }
+                    
+                    cards.forEach((card, i) => {
+                        card.classList.add('animate-pop-up-developer');
+                        setTimeout(() => card.classList.add('in-view'), 360 + i * 120);
+                    });
+                }
+            });
+        }, { threshold: 0.2, rootMargin: '-50px 0px' });
+
+        observer.observe(developerSection);
+    }
+
+    // Integrations Section Animation
+    function animateIntegrationsSection() {
+        const integrationsSection = document.querySelector('.integrations-section');
+        if (!integrationsSection) return;
+
+        const heading = integrationsSection.querySelector('.integrations-heading');
+        const description = integrationsSection.querySelector('.integrations-description');
+        const cards = integrationsSection.querySelectorAll('.integration-card');
+        const viewAllLink = integrationsSection.querySelector('.view-all-integrations');
+
+        let animated = false;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animated) {
+                    animated = true;
+                    
+                    if (heading) {
+                        heading.classList.add('animate-pop-up-integration');
+                        setTimeout(() => heading.classList.add('in-view'), 0);
+                    }
+                    
+                    if (description) {
+                        description.classList.add('animate-pop-up-integration');
+                        setTimeout(() => description.classList.add('in-view'), 180);
+                    }
+                    
+                    cards.forEach((card, i) => {
+                        card.classList.add('animate-pop-up-integration');
+                        setTimeout(() => card.classList.add('in-view'), 360 + i * 80);
+                    });
+                    
+                    if (viewAllLink) {
+                        viewAllLink.classList.add('animate-pop-up-integration');
+                        setTimeout(() => viewAllLink.classList.add('in-view'), 360 + cards.length * 80 + 200);
+                    }
+                }
+            });
+        }, { threshold: 0.2, rootMargin: '-50px 0px' });
+
+        observer.observe(integrationsSection);
+    }
+
+    // Stats Section Animation
+    function animateStatsSection() {
+        const statsSection = document.querySelector('.stats-section');
+        if (!statsSection) return;
+
+        const cards = statsSection.querySelectorAll('.stat-card');
+
+        let animated = false;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animated) {
+                    animated = true;
+                    
+                    cards.forEach((card, i) => {
+                        card.classList.add('animate-pop-up-stat');
+                        setTimeout(() => card.classList.add('in-view'), i * 120);
+                    });
+                }
+            });
+        }, { threshold: 0.2, rootMargin: '-50px 0px' });
+
+        observer.observe(statsSection);
+    }
+
+    // CTA Section Animation (reuse from main script)
+    function animateCtaSection() {
+        const ctaSection = document.querySelector('.features-page .cta-section');
+        if (!ctaSection) return;
+
+        const heading = ctaSection.querySelector('h2');
+        const description = ctaSection.querySelector('.cta-description');
+        const buttonsContainer = ctaSection.querySelector('.cta-buttons');
+
+        let animated = false;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animated) {
+                    animated = true;
+                    
+                    if (heading) {
+                        heading.classList.add('animate-pop-up-cta');
+                        setTimeout(() => heading.classList.add('in-view'), 0);
+                    }
+                    
+                    if (description) {
+                        description.classList.add('animate-pop-up-cta');
+                        setTimeout(() => description.classList.add('in-view'), 180);
+                    }
+                    
+                    if (buttonsContainer) {
+                        buttonsContainer.classList.add('animate-pop-up-cta');
+                        setTimeout(() => buttonsContainer.classList.add('in-view'), 360);
+                    }
+                }
+            });
+        }, { threshold: 0.2, rootMargin: '-50px 0px' });
+
+        observer.observe(ctaSection);
+    }
+
+    // Scroll Indicator Hide on Scroll
+    const scrollIndicator = document.querySelector('.features-scroll-indicator');
+    const heroSection = document.querySelector('.features-hero-section');
+    
+    if (scrollIndicator && heroSection && window.innerWidth > 768) {
+        function handleScroll() {
+            const scrollPosition = window.scrollY;
+            
+            if (scrollPosition > heroSection.offsetHeight * 0.2) {
+                scrollIndicator.classList.add('hidden');
+            } else {
+                scrollIndicator.classList.remove('hidden');
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+    }
+
+    // Initialize all animations on DOM load
+    window.addEventListener('DOMContentLoaded', function() {
+        // Animate hero section first (on page load)
+        setTimeout(animateHeroSection, 100);
+        
+        // Then initialize scroll-based animations
+        animateCapabilitiesSection();
+        animateDeveloperSection();
+        animateIntegrationsSection();
+        animateStatsSection();
+        animateCtaSection();
+    });
+})();
+
+
+
+// Torch/Spotlight Effect for Use Case Page
+(function() {
+    // Only run on use-case page
+    if (!document.querySelector('body').classList.contains('use-case-page') && 
+        window.location.pathname.includes('use-case')) {
+        document.body.classList.add('use-case-page');
+    }
+    
+    if (!document.body.classList.contains('use-case-page')) {
+        // Try to detect if we're on use-case page by checking the content
+        const heroSection = document.querySelector('.features-hero-section');
+        if (heroSection && document.querySelector('.use-case-stat-box')) {
+            document.body.classList.add('use-case-page');
+        } else {
+            return; 
+        }
+    }
+    
+
+    
+    
+    // Check if device supports hover
+    const hasHover = window.matchMedia('(hover: hover)').matches;
+    
+    if (!hasHover || window.innerWidth <= 768) {
+        return; // Exit on mobile/touch devices
+    }
+    
+    // Create torch light element
+    const torchLight = document.createElement('div');
+    torchLight.className = 'torch-light';
+    document.body.appendChild(torchLight);
+    
+    let torchX = 0;
+    let torchY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    
+    // Update torch position on mouse move
+    document.addEventListener('mousemove', (e) => {
+        torchX = e.clientX;
+        torchY = e.clientY;
+        
+        if (!torchLight.classList.contains('active')) {
+            torchLight.classList.add('active');
+            document.body.classList.add('torch-active');
+        }
+    });
+    
+    // Smooth animation for torch light
+    function animateTorch() {
+        // Easing calculation
+        const dx = torchX - currentX;
+        const dy = torchY - currentY;
+        
+        currentX += dx * 0.1; // Adjust 0.1 for smoothness (lower = smoother)
+        currentY += dy * 0.1;
+        
+        torchLight.style.left = currentX + 'px';
+        torchLight.style.top = currentY + 'px';
+        
+        requestAnimationFrame(animateTorch);
+    }
+    
+    animateTorch();
+    
+    // Hide torch when mouse leaves window
+    document.addEventListener('mouseleave', () => {
+        torchLight.classList.remove('active');
+        document.body.classList.remove('torch-active');
+    });
+    
+    // Show torch when mouse enters window
+    document.addEventListener('mouseenter', () => {
+        torchLight.classList.add('active');
+        document.body.classList.add('torch-active');
+    });
+    
+    // Handle page visibility change
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            torchLight.classList.remove('active');
+            document.body.classList.remove('torch-active');
+        }
+    });
+})();
+
+
+        // Contact Page - Galaxy Dots Animation
+        (function() {
+            const galaxyDotsContainer = document.getElementById('galaxyDots');
+            
+            if (!galaxyDotsContainer) return;
+            
+            // Create galaxy dots
+            for (let i = 0; i < 50; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'galaxy-dot';
+                
+                // Random position
+                const startX = Math.random() * 100;
+                const startY = Math.random() * 100;
+                
+                // Random size between 2px and 5px
+                const size = Math.random() * 3 + 2;
+                
+                // Random animation duration between 10s and 20s
+                const duration = Math.random() * 10 + 10;
+                
+                // Random movement
+                const moveX = (Math.random() - 0.5) * 200;
+                const moveY = (Math.random() - 0.5) * 200;
+                
+                // Random delay
+                const delay = Math.random() * 5;
+                
+                // Apply styles
+                dot.style.cssText = `
+                    left: ${startX}%;
+                    top: ${startY}%;
+                    width: ${size}px;
+                    height: ${size}px;
+                    animation: galaxyDotFloat${i} ${duration}s ease-in-out infinite;
+                    animation-delay: ${delay}s;
+                `;
+                
+                galaxyDotsContainer.appendChild(dot);
+                
+                // Create unique animation for each dot
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes galaxyDotFloat${i} {
+                        0%, 100% {
+                            transform: translate(0, 0);
+                            opacity: 0.3;
+                        }
+                        25% {
+                            transform: translate(${moveX * 0.3}px, ${moveY * 0.3}px);
+                            opacity: 0.8;
+                        }
+                        50% {
+                            transform: translate(${moveX}px, ${moveY}px);
+                            opacity: 1;
+                        }
+                        75% {
+                            transform: translate(${moveX * 0.5}px, ${moveY * 0.7}px);
+                            opacity: 0.6;
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+        })();
+        
+        
+        // Contact Form Validation
+        (function() {
+            const contactForm = document.getElementById('contactFormMain');
+            
+            if (!contactForm) return;
+            
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                
+                if (contactForm.checkValidity()) {
+                    // Form is valid - you can add your form submission logic here
+                    console.log('Form is valid! Submitting...');
+                    
+                    // Example: Get form data
+                    const formData = {
+                        name: document.getElementById('contactName').value,
+                        email: document.getElementById('contactEmail').value,
+                        message: document.getElementById('contactMessage').value
+                    };
+                    
+                    console.log('Form Data:', formData);
+                    
+                    // Show success message (you can customize this)
+                    alert('Thank you! Your message has been sent successfully.');
+                    
+                    // Reset form
+                    contactForm.reset();
+                    contactForm.classList.remove('was-validated');
+                }
+                
+                contactForm.classList.add('was-validated');
+            }, false);
+        })(); 
+
+
+        // Login Page - Password Toggle
+(function() {
+    const togglePasswordBtn = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('loginPassword');
+    const toggleIcon = document.getElementById('togglePasswordIcon');
+    
+    if (!togglePasswordBtn || !passwordInput || !toggleIcon) return;
+    
+    togglePasswordBtn.addEventListener('click', function() {
+        // Toggle password visibility
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        
+        // Toggle icon
+        if (type === 'password') {
+            toggleIcon.classList.remove('bi-eye-slash');
+            toggleIcon.classList.add('bi-eye');
+        } else {
+            toggleIcon.classList.remove('bi-eye');
+            toggleIcon.classList.add('bi-eye-slash');
+        }
+    });
+})();
+
+
+// Login Form Validation
+(function() {
+    const loginForm = document.getElementById('loginForm');
+    
+    if (!loginForm) return;
+    
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        
+        if (loginForm.checkValidity()) {
+            // Form is valid - you can add your login logic here
+            console.log('Login form is valid! Submitting...');
+            
+            // Example: Get form data
+            const formData = {
+                email: document.getElementById('loginEmail').value,
+                password: document.getElementById('loginPassword').value,
+                rememberMe: document.getElementById('rememberMe').checked
+            };
+            
+            console.log('Login Data:', formData);
+            
+            // Show success message (you can customize this)
+            alert('Login successful! Redirecting to dashboard...');
+            
+        }
+        
+        loginForm.classList.add('was-validated');
+    }, false);
+})();
+
+// Active Navigation Link
+(function() {
+    // Get current page filename
+    const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
+    
+    // Find all nav links
+    const navLinks = document.querySelectorAll('.nav-link[data-page]');
+    
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute('data-page');
+        
+        // Check if this link matches the current page
+        if (linkPage === currentPage || 
+            (currentPage === '' && linkPage === 'index') ||
+            (currentPage === 'index' && linkPage === 'index')) {
+            link.classList.add('active');
+        }
+        
+        // Special case for pricing (if on index page and hash is #pricing)
+        if (linkPage === 'pricing' && window.location.hash === '#pricing') {
+            link.classList.add('active');
+        }
+    });
+    
+    // Update active state when hash changes (for pricing link)
+    window.addEventListener('hashchange', () => {
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('data-page');
+            
+            if (linkPage === 'pricing') {
+                if (window.location.hash === '#pricing') {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            }
+        });
+    });
+})();
+
 // Floating Particles for CTA Section
 (function() {
     const particlesContainer = document.querySelector('.floating-particles');
@@ -812,3 +1348,251 @@
 })();
 
 
+
+// Floating Dots Animation for Features Hero
+(function() {
+    const dotsContainer = document.querySelector('.floating-dots-bg');
+    
+    if (!dotsContainer) return;
+
+    // Create 20 floating dots
+    for (let i = 0; i < 20; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'floating-dot';
+        
+        // Random positioning
+        const startX = Math.random() * 100;
+        const startY = Math.random() * 100;
+        
+        // Random size between 3px and 6px
+        const size = Math.random() * 3 + 3;
+        
+        // Random animation duration between 8s and 15s
+        const duration = Math.random() * 7 + 8;
+        
+        // Random direction (up or down)
+        const direction = Math.random() > 0.5 ? -1 : 1;
+        const distance = (Math.random() * 100 + 50) * direction;
+        
+        // Random delay
+        const delay = Math.random() * 5;
+        
+        // Apply styles
+        dot.style.cssText = `
+            position: absolute;
+            left: ${startX}%;
+            top: ${startY}%;
+            width: ${size}px;
+            height: ${size}px;
+            background: rgba(81, 162, 255, 0.6);
+            border-radius: 50%;
+            animation: floatDot${i} ${duration}s ease-in-out infinite;
+            animation-delay: ${delay}s;
+            box-shadow: 0 0 ${size * 2}px rgba(81, 162, 255, 0.4);
+        `;
+        
+        dotsContainer.appendChild(dot);
+        
+        // Create unique animation for each dot
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatDot${i} {
+                0%, 100% {
+                    transform: translateY(0) translateX(0);
+                    opacity: 0.3;
+                }
+                50% {
+                    transform: translateY(${distance}px) translateX(${Math.random() * 40 - 20}px);
+                    opacity: 0.8;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+})();
+
+
+// Floating Octagons Animation
+(function() {
+    const octagonsContainer = document.querySelector('.floating-octagons');
+    
+    if (!octagonsContainer) return;
+
+    // Create 4 floating octagons - adjusted positions
+    const positions = [
+        { top: '5%', left: '8%', size: 150 },      // Upper left
+        { top: '8%', right: '12%', size: 150 },    // Upper right
+        { bottom: '15%', left: '10%', size: 150 }, // Lower left
+        { bottom: '12%', right: '8%', size: 150 }  // Lower right
+    ];
+
+    positions.forEach((pos, i) => {
+        // Create wrapper for positioning and movement
+        const wrapper = document.createElement('div');
+        wrapper.className = 'octagon-wrapper';
+        
+        // Apply positioning to wrapper
+        wrapper.style.cssText = `
+            position: absolute;
+            ${pos.top ? `top: ${pos.top};` : ''}
+            ${pos.bottom ? `bottom: ${pos.bottom};` : ''}
+            ${pos.left ? `left: ${pos.left};` : ''}
+            ${pos.right ? `right: ${pos.right};` : ''}
+            width: ${pos.size}px;
+            height: ${pos.size}px;
+            animation: floatMove${i} ${35 + i * 5}s ease-in-out infinite;
+        `;
+        
+        // Create SVG octagon
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('width', pos.size);
+        svg.setAttribute('height', pos.size);
+        svg.setAttribute('viewBox', `0 0 ${pos.size} ${pos.size}`);
+        svg.style.cssText = `
+            display: block;
+            animation: octagonRotate${i} ${15 + i * 2}s linear infinite;
+        `;
+        
+        // Create octagon polygon
+        const polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        const centerX = pos.size / 2;
+        const centerY = pos.size / 2;
+        const radius = pos.size / 2 - 2;
+        
+        // Calculate octagon points
+        let points = '';
+        for (let j = 0; j < 8; j++) {
+            const angle = (Math.PI / 4) * j - Math.PI / 8;
+            const x = centerX + radius * Math.cos(angle);
+            const y = centerY + radius * Math.sin(angle);
+            points += `${x},${y} `;
+        }
+        
+        polygon.setAttribute('points', points.trim());
+        polygon.setAttribute('fill', 'none');
+        polygon.setAttribute('stroke', 'rgba(43, 127, 255, 0.3)');
+        polygon.setAttribute('stroke-width', '1');
+        polygon.style.opacity = '0.6';
+        
+        svg.appendChild(polygon);
+        wrapper.appendChild(svg);
+        octagonsContainer.appendChild(wrapper);
+
+        // Create unique float animation for each octagon (moves in all directions)
+        const floatStyle = document.createElement('style');
+        
+        // Random movement values
+        const moveX1 = -20 + Math.random() * 40;
+        const moveY1 = -20 + Math.random() * 40;
+        const moveX2 = -20 + Math.random() * 40;
+        const moveY2 = -20 + Math.random() * 40;
+        const moveX3 = -20 + Math.random() * 40;
+        const moveY3 = -20 + Math.random() * 40;
+        
+        floatStyle.textContent = `
+            @keyframes floatMove${i} {
+                0%, 100% {
+                    transform: translate(0, 0);
+                }
+                25% {
+                    transform: translate(${moveX1}px, ${moveY1}px);
+                }
+                50% {
+                    transform: translate(${moveX2}px, ${moveY2}px);
+                }
+                75% {
+                    transform: translate(${moveX3}px, ${moveY3}px);
+                }
+            }
+            
+            @keyframes octagonRotate${i} {
+                0% {
+                    transform: rotate(0deg);
+                    opacity: 0.3;
+                }
+                25% {
+                    opacity: 0.5;
+                }
+                50% {
+                    transform: rotate(180deg);
+                    opacity: 0.3;
+                }
+                75% {
+                    opacity: 0.5;
+                }
+                100% {
+                    transform: rotate(360deg);
+                    opacity: 0.3;
+                }
+            }
+        `;
+        
+        document.head.appendChild(floatStyle);
+    });
+})();
+
+// ...existing code...
+
+// Floating Dots for Integrations Section
+(function() {
+    const dotsContainers = document.querySelectorAll('.integrations-section .floating-dots-bg');
+    
+    dotsContainers.forEach(dotsContainer => {
+        if (!dotsContainer) return;
+
+        // Create 25 floating dots
+        for (let i = 0; i < 25; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'floating-dot';
+            
+            // Random positioning
+            const startX = Math.random() * 100;
+            const startY = Math.random() * 100;
+            
+            // Random size between 3px and 6px
+            const size = Math.random() * 3 + 3;
+            
+            // Random animation duration between 8s and 15s
+            const duration = Math.random() * 7 + 8;
+            
+            // Random direction (up or down)
+            const direction = Math.random() > 0.5 ? -1 : 1;
+            const distance = (Math.random() * 100 + 50) * direction;
+            
+            // Random delay
+            const delay = Math.random() * 5;
+            
+            // Apply styles
+            dot.style.cssText = `
+                position: absolute;
+                left: ${startX}%;
+                top: ${startY}%;
+                width: ${size}px;
+                height: ${size}px;
+                background: rgba(194, 122, 255, 0.5);
+                border-radius: 50%;
+                animation: floatDotIntegration${i} ${duration}s ease-in-out infinite;
+                animation-delay: ${delay}s;
+                box-shadow: 0 0 ${size * 2}px rgba(194, 122, 255, 0.4);
+            `;
+            
+            dotsContainer.appendChild(dot);
+            
+            // Create unique animation for each dot
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes floatDotIntegration${i} {
+                    0%, 100% {
+                        transform: translateY(0) translateX(0);
+                        opacity: 0.3;
+                    }
+                    50% {
+                        transform: translateY(${distance}px) translateX(${Math.random() * 40 - 20}px);
+                        opacity: 0.8;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+    });
+})();

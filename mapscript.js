@@ -14,6 +14,8 @@
 
                 // Create root element
                 var root = am5.Root.new("chartdiv");
+                // hide logo 
+                root._logo.dispose();
 
                 // Set themes
                 root.setThemes([am5themes_Animated.new(root)]);
