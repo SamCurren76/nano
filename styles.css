@@ -2070,6 +2070,7 @@ body.custom-cursor .switch-slider {
 
     .card-description {
         font-size: 0.75rem;
+        margin-bottom: 12px !important;
     }
 
     @keyframes orbit {
@@ -3616,7 +3617,7 @@ footer {
 
 @media (max-width: 768px) {
     footer {
-        padding: 30px 0 24px;
+        padding: 0px 0 24px;
     }
 
     .footer-content {
@@ -4761,14 +4762,18 @@ footer {
         font-size: 2.5rem;
     }
 
+        .badge-wrap {
+        display: flex;
+        justify-content: center;
+    }
+
     .features-hero-section .badge-custom,
     .badge-custom {
-        display: flex !important;
-        max-width: 68%;
-        justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
+        display: inline-flex;
+        width: fit-content;
+        white-space: nowrap;
     }
+
 
     .features-hero-section .d-flex.flex-column.flex-md-row {
         width: 100%;
@@ -5409,8 +5414,8 @@ footer {
     }
 
     .integration-icon {
-        width: 60px;
-        height: 60px;
+        width: 30px;
+        height: 30px;
     }
 
     .integration-icon i {
@@ -5544,6 +5549,13 @@ footer {
 
     .stat-card-number {
         font-size: 2.5rem;
+    }
+    .developer-card-header
+    {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 16px;
     }
 }
 
@@ -6156,7 +6168,7 @@ footer {
     }
 
     .industry-content-card {
-        padding: 28px 20px;
+        padding: 0px 20px 20px 20px;
     }
 
     .industry-stat-card {
